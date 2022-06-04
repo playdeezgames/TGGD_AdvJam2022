@@ -3,15 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TGGD_AdvJam2022", "TGGD_AdvJam2022\TGGD_AdvJam2022.vbproj", "{E2F0AF0D-9709-40CE-A30D-00148708AE70}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "TGGD_AdvJam2022", "TGGD_AdvJam2022\TGGD_AdvJam2022.vbproj", "{E2F0AF0D-9709-40CE-A30D-00148708AE70}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "AdvJam2022.Game", "AdvJam2022.Game\AdvJam2022.Game.vbproj", "{1AC7ACED-E852-492A-BA26-863BBD3B0F0E}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "AdvJam2022.Game", "AdvJam2022.Game\AdvJam2022.Game.vbproj", "{1AC7ACED-E852-492A-BA26-863BBD3B0F0E}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "SPLORR.Game", "SPLORR.Game\SPLORR.Game.vbproj", "{5EE0DC30-45AA-4352-ADF8-E1521248E550}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "SPLORR.Data", "SPLORR.Data\SPLORR.Data.vbproj", "{D5DECE76-46BE-4679-80D8-7487CA321381}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "AdvJam2022.Data", "AdvJam2022.Data\AdvJam2022.Data.vbproj", "{AA314317-2686-4E0A-AE30-EB30C703766B}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "AdvJam2022.Data", "AdvJam2022.Data\AdvJam2022.Data.vbproj", "{AA314317-2686-4E0A-AE30-EB30C703766B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "stuff", "stuff", "{F59A0AB2-94E7-4592-AACB-34D363C4C907}"
+	ProjectSection(SolutionItems) = preProject
+		..\pub-windows\.itch.toml = ..\pub-windows\.itch.toml
+		..\butler.sh = ..\butler.sh
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
