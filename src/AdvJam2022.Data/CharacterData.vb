@@ -2,13 +2,17 @@ Public Module CharacterData
     Friend Const TableName = "Characters"
     Friend Const CharacterIdColumn = "CharacterId"
     Friend Const CharacterTypeColumn = "CharacterType"
+    Friend Const LocationIdColumn = LocationData.LocationIdColumn
 
     Friend Sub Initialize()
+        LocationData.Initialize()
         ExecuteNonQuery(
             $"CREATE TABLE IF NOT EXISTS [{TableName}]
             (
                 [{CharacterIdColumn}] INTEGER PRIMARY KEY AUTOINCREMENT,
-                [{CharacterTypeColumn}] INT NOT NULL
+                [{CharacterTypeColumn}] INT NOT NULL,
+                [{LocationIdColumn}] INT NOT NULL,
+                FOREIGN KEY ([{LocationIdColumn}]) REFERENCES [{LocationData.TableName}]([{LocationData.LocationIdColumn}])
             );")
     End Sub
     Public Function ReadForCharacterType(characterType As Long) As IEnumerable(Of Long)
@@ -23,18 +27,21 @@ Public Module CharacterData
         ClearForColumnValue(AddressOf Initialize, TableName, (CharacterTypeColumn, characterType))
     End Sub
 
-    Function Create(characterType As Long) As Long
+    Function Create(characterType As Long, locationId As Long) As Long
         Initialize()
         ExecuteNonQuery(
             $"INSERT INTO [{TableName}]
             (
-                [{CharacterTypeColumn}]
+                [{CharacterTypeColumn}],
+                [{LocationIdColumn}]
             ) 
             VALUES
             (
-                @{CharacterTypeColumn}
+                @{CharacterTypeColumn},
+                @{LocationIdColumn}
             );",
-            MakeParameter($"@{CharacterTypeColumn}", characterType))
+            MakeParameter($"@{CharacterTypeColumn}", characterType),
+            MakeParameter($"@{LocationIdColumn}", locationId))
         Return LastInsertRowId
     End Function
 End Module

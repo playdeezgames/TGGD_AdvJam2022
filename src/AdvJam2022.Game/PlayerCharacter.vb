@@ -4,9 +4,9 @@ Public Class PlayerCharacter
         MyBase.New(CharacterData.ReadForCharacterType(CharacterType.Player).Single)
     End Sub
 
-    Public Shared Function CreatePlayerCharacter() As PlayerCharacter
+    Public Shared Function CreatePlayerCharacter(location As Location) As PlayerCharacter
         CharacterData.ClearForCharacterType(CharacterType.Player)
-        Character.CreateCharacter(CharacterType.Player)
+        Character.CreateCharacter(CharacterType.Player, location)
         Return New PlayerCharacter()
     End Function
 End Class

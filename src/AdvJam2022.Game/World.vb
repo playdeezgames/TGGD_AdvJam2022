@@ -1,5 +1,7 @@
 ﻿Public Module World
-    Sub Create()
+    Function Create() As PlayerCharacter
         Dim startingLocation As Location = Location.Create(LocationType.Start)
-    End Sub
+        Dim player = PlayerCharacter.CreatePlayerCharacter(startingLocation)
+        Return player
+    End Function
 End Module

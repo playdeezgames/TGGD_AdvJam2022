@@ -2,8 +2,7 @@
     Friend Sub Run()
         Store.Reset()
         IntroProcessor.Run()
-        World.Create()
-        Dim player = PlayerCharacter.CreatePlayerCharacter()
+        Dim player = World.Create()
         InPlayProcessor.Run(player)
         Store.ShutDown()
     End Sub

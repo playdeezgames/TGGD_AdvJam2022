@@ -4,7 +4,7 @@
         Id = characterId
     End Sub
 
-    Protected Shared Function CreateCharacter(characterType As CharacterType) As Character
-        Return New Character(CharacterData.Create(characterType))
+    Protected Shared Function CreateCharacter(characterType As CharacterType, location As Location) As Character
+        Return New Character(CharacterData.Create(characterType, location.Id))
     End Function
 End Class
