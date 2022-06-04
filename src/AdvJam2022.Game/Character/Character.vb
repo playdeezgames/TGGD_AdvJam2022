@@ -26,10 +26,4 @@
             CharacterData.WriteLocation(Id, value.Id)
         End Set
     End Property
-    Public Sub Move(direction As Direction)
-        If Not CanMoveDirection(direction) Then
-            Return
-        End If
-        Location = Location.Routes(direction).ToLocation
-    End Sub
 End Class

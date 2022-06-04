@@ -9,5 +9,13 @@ Public Class PlayerCharacter
         Character.CreateCharacter(CharacterType.Player, location)
         Return New PlayerCharacter()
     End Function
+    Public Sub Move(direction As Direction, builder As StringBuilder)
+        If Not CanMoveDirection(direction) Then
+            builder.AppendLine($"You cannot go {direction.Name}.")
+            Return
+        End If
+        Location = Location.Routes(direction).ToLocation
+        builder.AppendLine($"You go {direction.Name}.")
+    End Sub
 
 End Class

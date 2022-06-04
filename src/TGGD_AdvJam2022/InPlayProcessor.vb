@@ -1,9 +1,13 @@
-﻿Module InPlayProcessor
+﻿Imports System.Text
+
+Module InPlayProcessor
     Friend Sub Run(player As PlayerCharacter)
         Dim done = False
+        Dim builder As New StringBuilder
         While Not done
             AnsiConsole.Clear()
-            DisplayStatus(player)
+            DisplayStatus(player, builder.ToString)
+            builder.Clear()
             DisplayExits(player)
             Dim prompt As New SelectionPrompt(Of String) With {.Title = "[olive]Now What?[/]"}
             If player.CanMove Then
@@ -14,7 +18,7 @@
                 Case GameMenuText
                     done = GameMenuProcessor.Run()
                 Case MoveText
-                    MoveProcessor.Run(player)
+                    MoveProcessor.Run(player, builder)
             End Select
         End While
     End Sub
@@ -25,7 +29,7 @@
         End If
     End Sub
 
-    Private Sub DisplayStatus(player As PlayerCharacter)
-        AnsiConsole.MarkupLine("Yer alive!")
+    Private Sub DisplayStatus(player As PlayerCharacter, message As String)
+        AnsiConsole.MarkupLine(message)
     End Sub
 End Module

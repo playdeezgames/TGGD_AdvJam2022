@@ -26,6 +26,7 @@
   <ItemGroup>
     <Import Include="AdvJam2022.Data" />
     <Import Include="SPLORR.Game" />
+    <Import Include="System.Text" />
   </ItemGroup>
 
 </Project>

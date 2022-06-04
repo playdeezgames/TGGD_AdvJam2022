@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "stuff", "stuff", "{F59A0AB2
 		..\butler.sh = ..\butler.sh
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{17678619-E249-49D2-A6FE-6F67EFD33CE1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +50,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5EE0DC30-45AA-4352-ADF8-E1521248E550} = {17678619-E249-49D2-A6FE-6F67EFD33CE1}
+		{D5DECE76-46BE-4679-80D8-7487CA321381} = {17678619-E249-49D2-A6FE-6F67EFD33CE1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4A8A2675-4B05-41AB-9527-9A99658597EE}

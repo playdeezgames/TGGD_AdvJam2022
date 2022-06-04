@@ -31,6 +31,7 @@
     <Import Include="AdvJam2022.Game" />
     <Import Include="Spectre.Console" />
     <Import Include="SPLORR.Data" />
+    <Import Include="System.Text" />
   </ItemGroup>
 
 </Project>
