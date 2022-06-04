@@ -2,6 +2,7 @@
     Sub Run()
         Dim done = False
         While Not done
+            AnsiConsole.Clear()
             Dim mainMenu As New SelectionPrompt(Of String) With {.Title = "[olive]Main Menu:[/]"}
             mainMenu.AddChoice(NewGameText)
             mainMenu.AddChoice(QuitText)

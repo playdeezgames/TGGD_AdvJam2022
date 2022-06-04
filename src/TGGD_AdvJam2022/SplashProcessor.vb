@@ -9,5 +9,6 @@
             }
         AnsiConsole.Write(figlet)
         AnsiConsole.WriteLine("A production of TheGrumpyGameDev")
+        OkProcessor.Run()
     End Sub
 End Module
