@@ -28,20 +28,6 @@ Public Module CharacterData
     End Sub
 
     Function Create(characterType As Long, locationId As Long) As Long
-        Initialize()
-        ExecuteNonQuery(
-            $"INSERT INTO [{TableName}]
-            (
-                [{CharacterTypeColumn}],
-                [{LocationIdColumn}]
-            ) 
-            VALUES
-            (
-                @{CharacterTypeColumn},
-                @{LocationIdColumn}
-            );",
-            MakeParameter($"@{CharacterTypeColumn}", characterType),
-            MakeParameter($"@{LocationIdColumn}", locationId))
-        Return LastInsertRowId
+        Return CreateRecord(AddressOf Initialize, TableName, (CharacterTypeColumn, characterType), (LocationIdColumn, locationId))
     End Function
 End Module
