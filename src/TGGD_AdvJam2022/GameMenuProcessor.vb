@@ -5,7 +5,7 @@
         prompt.AddChoice(AbandonGameText)
         Select Case AnsiConsole.Prompt(prompt)
             Case AbandonGameText
-                Return True
+                Return ConfirmProcessor.Run("Are you sure you want to abandon this game?")
             Case Else
                 Return False
         End Select

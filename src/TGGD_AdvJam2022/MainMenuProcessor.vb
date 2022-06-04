@@ -9,7 +9,7 @@
                 Case NewGameText
                     NewGameProcessor.Run()
                 Case QuitText
-                    done = ConfirmQuitProcessor.Run()
+                    done = ConfirmProcessor.Run("Are you sure you want to quit?")
             End Select
         End While
     End Sub
