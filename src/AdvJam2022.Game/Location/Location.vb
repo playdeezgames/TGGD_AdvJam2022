@@ -11,4 +11,14 @@
     Friend Function HasRoute(direction As Direction) As Boolean
         Return RouteData.ReadForFromLocationAndDirection(Id, direction).HasValue
     End Function
+
+    ReadOnly Property Routes As IReadOnlyDictionary(Of Direction, Route)
+        Get
+            Return RouteData.
+                ReadForFromLocation(Id).
+                ToDictionary(
+                    Function(x) CType(x.Item1, Direction),
+                    Function(x) New Route(x.Item2))
+        End Get
+    End Property
 End Class

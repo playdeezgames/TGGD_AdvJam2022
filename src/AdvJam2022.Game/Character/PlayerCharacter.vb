@@ -9,4 +9,5 @@ Public Class PlayerCharacter
         Character.CreateCharacter(CharacterType.Player, location)
         Return New PlayerCharacter()
     End Function
+
 End Class

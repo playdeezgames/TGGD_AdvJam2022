@@ -7,7 +7,7 @@
     End Property
     MustOverride ReadOnly Property Opposite As Direction
 End Class
-Module DirectionDescriptorUtility
+Public Module DirectionDescriptorUtility
     Friend ReadOnly DirectionDescriptors As IReadOnlyDictionary(Of Direction, DirectionDescriptor) = New Dictionary(Of Direction, DirectionDescriptor) From
         {
             {Direction.North, New NorthDirectionDescriptor},
@@ -25,4 +25,7 @@ Module DirectionDescriptorUtility
             Return DirectionDescriptors.Where(Function(x) x.Value.IsCardinal).Select(Function(x) x.Key).ToList
         End Get
     End Property
+    Public Function ParseDirection(directionName As String) As Direction
+        Return AllDirections.SingleOrDefault(Function(x) x.Name = directionName)
+    End Function
 End Module

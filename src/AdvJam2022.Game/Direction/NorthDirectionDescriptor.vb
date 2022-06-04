@@ -3,7 +3,7 @@
 
     Public Overrides ReadOnly Property Name As String
         Get
-            Return "north"
+            Return "North"
         End Get
     End Property
 

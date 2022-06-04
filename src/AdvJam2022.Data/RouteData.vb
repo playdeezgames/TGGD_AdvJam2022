@@ -19,6 +19,18 @@
             );")
     End Sub
 
+    Public Function ReadToLocation(routeId As Long) As Long?
+        Return ReadColumnValue(Of Long, Long)(AddressOf Initialize, TableName, ToLocationIdColumn, (RouteIdColumn, routeId))
+    End Function
+
+    Public Function ReadDirection(routeId As Long) As Long?
+        Return ReadColumnValue(Of Long, Long)(AddressOf Initialize, TableName, DirectionColumn, (RouteIdColumn, routeId))
+    End Function
+
+    Public Function ReadForFromLocation(fromLocationId As Long) As IReadOnlyList(Of Tuple(Of Long, Long))
+        Return ReadRecordsWithColumnValue(Of Long, Long, Long)(AddressOf Initialize, TableName, (DirectionColumn, RouteIdColumn), (FromLocationIdColumn, fromLocationId)).ToList
+    End Function
+
     Public Function ReadForFromLocationAndDirection(fromLocationId As Long, direction As Long) As Long?
         Return ReadColumnValue(Of Long, Long, Long)(AddressOf Initialize, TableName, RouteIdColumn, (FromLocationIdColumn, fromLocationId), (DirectionColumn, direction))
     End Function

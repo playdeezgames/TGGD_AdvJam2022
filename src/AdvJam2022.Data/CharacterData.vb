@@ -15,6 +15,15 @@ Public Module CharacterData
                 FOREIGN KEY ([{LocationIdColumn}]) REFERENCES [{LocationData.TableName}]([{LocationData.LocationIdColumn}])
             );")
     End Sub
+
+    Public Function ReadLocation(characterId As Long) As Long?
+        Return ReadColumnValue(Of Long, Long)(AddressOf Initialize, TableName, LocationIdColumn, (CharacterIdColumn, characterId))
+    End Function
+
+    Public Sub WriteLocation(characterId As Long, locationId As Long)
+        WriteColumnValue(AddressOf Initialize, TableName, (LocationIdColumn, locationId), (CharacterIdColumn, characterId))
+    End Sub
+
     Public Function ReadForCharacterType(characterType As Long) As IEnumerable(Of Long)
         Return ReadRecordsWithColumnValue(Of Long, Long)(
             AddressOf Initialize,
