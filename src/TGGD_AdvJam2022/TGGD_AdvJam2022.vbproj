@@ -28,7 +28,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Import Include="AdvJam2022.Game" />
     <Import Include="Spectre.Console" />
+    <Import Include="SPLORR.Data" />
   </ItemGroup>
 
 </Project>

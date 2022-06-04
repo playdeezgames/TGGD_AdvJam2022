@@ -5,5 +5,4 @@
         prompt.AddChoice(YesText)
         Return AnsiConsole.Prompt(prompt) = YesText
     End Function
-
 End Module
