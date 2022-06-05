@@ -17,7 +17,7 @@
             Dim firstLocation = locations(locationIndex)
             Dim secondLocation = locations((locationIndex + 1) Mod LocationCount)
             Dim direction = RNG.FromEnumerable(CardinalDirections)
-            While firstLocation.HasRoute(direction)
+            While firstLocation.HasRoute(direction) OrElse secondLocation.HasRoute(direction.Opposite)
                 direction = RNG.FromEnumerable(CardinalDirections)
             End While
             Route.Create(firstLocation, direction, secondLocation, RouteType.Road)

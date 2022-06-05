@@ -13,10 +13,13 @@ Module InPlayProcessor
             If player.CanMove Then
                 prompt.AddChoice(MoveText)
             End If
+            prompt.AddChoice(StatusText)
             prompt.AddChoice(GameMenuText)
             Select Case AnsiConsole.Prompt(prompt)
                 Case GameMenuText
                     done = GameMenuProcessor.Run()
+                Case StatusText
+                    StatusProcessor.Run(player)
                 Case MoveText
                     MoveProcessor.Run(player, builder)
             End Select

@@ -9,5 +9,6 @@
     Friend Const QuitText = "Quit"
     Friend Const ResumeGameText = "Resume Game"
     Friend Const SaveGameText = "Save Game..."
+    Friend Const StatusText = "Status"
     Friend Const YesText = "Yes"
 End Module
