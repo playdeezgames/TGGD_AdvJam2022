@@ -15,8 +15,8 @@
             While firstLocation.HasRoute(direction)
                 direction = RNG.FromEnumerable(CardinalDirections)
             End While
-            Route.Create(firstLocation, direction, secondLocation)
-            Route.Create(secondLocation, direction.Opposite, firstLocation)
+            Route.Create(firstLocation, direction, secondLocation, RouteType.Road)
+            Route.Create(secondLocation, direction.Opposite, firstLocation, RouteType.Road)
         Next
         Dim player = PlayerCharacter.CreatePlayerCharacter(locations.First)
         Return player
