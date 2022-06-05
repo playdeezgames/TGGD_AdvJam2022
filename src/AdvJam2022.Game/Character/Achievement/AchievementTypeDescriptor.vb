@@ -6,7 +6,8 @@ Public Module AchievementTypeDescriptorUtility
     Friend ReadOnly AchievementTypeDescriptors As IReadOnlyDictionary(Of AchievementType, AchievementTypeDescriptor) =
         New Dictionary(Of AchievementType, AchievementTypeDescriptor) From
         {
-            {AchievementType.OverworldExploration, New OverworldExplorationDescriptor}
+            {AchievementType.OverworldExploration, New OverworldExplorationDescriptor},
+            {AchievementType.RecoveredGoose, New RecoveredGooseDescriptor}
         }
     Public ReadOnly Property MaximumScore As Long
         Get

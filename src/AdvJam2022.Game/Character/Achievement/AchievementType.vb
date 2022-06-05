@@ -2,6 +2,7 @@
 
 Public Enum AchievementType
     None
+    RecoveredGoose
     OverworldExploration
 End Enum
 Public Module AchievementTypeExtensions
