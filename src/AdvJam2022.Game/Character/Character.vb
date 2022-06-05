@@ -5,7 +5,9 @@
     End Sub
 
     Protected Shared Function CreateCharacter(characterType As CharacterType, location As Location) As Character
-        Return New Character(CharacterData.Create(characterType, location.Id))
+        Dim result = New Character(CharacterData.Create(characterType, location.Id))
+        result.Location = location
+        Return result
     End Function
 
     ReadOnly Property CanMove As Boolean
@@ -23,6 +25,7 @@
             Return New Location(CharacterData.ReadLocation(Id).Value)
         End Get
         Set(value As Location)
+            CharacterLocationData.Write(Id, value.Id)
             CharacterData.WriteLocation(Id, value.Id)
         End Set
     End Property
