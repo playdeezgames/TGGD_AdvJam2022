@@ -26,4 +26,10 @@
             CharacterData.WriteLocation(Id, value.Id)
         End Set
     End Property
+
+    ReadOnly Property Achievements As IEnumerable(Of AchievementType)
+        Get
+            Throw New NotImplementedException
+        End Get
+    End Property
 End Class
