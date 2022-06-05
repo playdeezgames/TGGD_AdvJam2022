@@ -29,7 +29,7 @@
 
     ReadOnly Property Achievements As IEnumerable(Of AchievementType)
         Get
-            Throw New NotImplementedException
+            Return New List(Of AchievementType)
         End Get
     End Property
 End Class
