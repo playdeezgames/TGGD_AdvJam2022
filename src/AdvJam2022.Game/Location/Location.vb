@@ -21,4 +21,12 @@
                     Function(x) New Route(x.Item2))
         End Get
     End Property
+
+    Friend Shared Function FindAll(locationType As LocationType) As IEnumerable(Of Location)
+        Return LocationData.ReadForLocationType(locationType).Select(AddressOf Location.FromId)
+    End Function
+
+    Private Shared Function FromId(locationId As Long) As Location
+        Return New Location(locationId)
+    End Function
 End Class
