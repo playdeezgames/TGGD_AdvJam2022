@@ -5,8 +5,9 @@
     End Sub
 
     Protected Shared Function CreateCharacter(characterType As CharacterType, location As Location) As Character
-        Dim result = New Character(CharacterData.Create(characterType, location.Id))
-        result.Location = location
+        Dim result = New Character(CharacterData.Create(characterType, location.Id)) With {
+            .Location = location
+        }
         Return result
     End Function
 
