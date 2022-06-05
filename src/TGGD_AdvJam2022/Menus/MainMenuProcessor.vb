@@ -5,10 +5,13 @@
             AnsiConsole.Clear()
             Dim mainMenu As New SelectionPrompt(Of String) With {.Title = "[olive]Main Menu:[/]"}
             mainMenu.AddChoice(NewGameText)
+            mainMenu.AddChoice(LoadGameText)
             mainMenu.AddChoice(QuitText)
             Select Case AnsiConsole.Prompt(mainMenu)
                 Case NewGameText
                     NewGameProcessor.Run()
+                Case LoadGameText
+                    LoadGameProcessor.Run()
                 Case QuitText
                     done = ConfirmProcessor.Run("Are you sure you want to quit?")
             End Select
