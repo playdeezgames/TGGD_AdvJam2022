@@ -29,7 +29,7 @@
 
     ReadOnly Property Achievements As IEnumerable(Of AchievementType)
         Get
-            Return New List(Of AchievementType)
+            Return CharacterAchievementData.Read(Id).Select(Function(x) CType(x, AchievementType))
         End Get
     End Property
 End Class
