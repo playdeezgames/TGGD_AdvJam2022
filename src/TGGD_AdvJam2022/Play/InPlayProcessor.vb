@@ -8,6 +8,12 @@ Module InPlayProcessor
             AnsiConsole.Clear()
             DisplayStatus(player, builder.ToString)
             UpdateAchievements(player)
+            If player.IsDead Then
+                Dim figlet = New FigletText("Yer dead!") With {.Color = Color.Red}
+                AnsiConsole.Write(figlet)
+                OkProcessor.Run()
+                Exit While
+            End If
             builder.Clear()
             DisplayExits(player)
             Dim prompt As New SelectionPrompt(Of String) With {.Title = "[olive]Now What?[/]"}

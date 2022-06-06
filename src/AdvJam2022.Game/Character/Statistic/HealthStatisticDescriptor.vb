@@ -15,4 +15,8 @@
                 Throw New NotImplementedException
         End Select
     End Function
+
+    Public Overrides Function MinimumValue(characterType As CharacterType) As Long
+        Return 0
+    End Function
 End Class

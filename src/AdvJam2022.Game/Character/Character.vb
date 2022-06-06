@@ -13,9 +13,9 @@
 
     Public ReadOnly Property Statistics As IReadOnlyDictionary(Of StatisticType, Long)
         Get
-            Return AllStatistics.ToDictionary(Of StatisticType, Long)(
+            Return AllStatistics.ToDictionary(
                 Function(x) x,
-                Function(x) If(CharacterStatisticData.Read(Id, x), x.InitialValue(CharacterType)))
+                Function(x) GetStatistic(x))
         End Get
     End Property
 
@@ -62,4 +62,18 @@
     Function CheckAchievement(achievement As AchievementType) As Boolean
         Return achievement.Check(Me)
     End Function
+
+    Function IsMinimum(statisticType As StatisticType) As Boolean
+        Return GetStatistic(statisticType) = statisticType.MinimumValue(CharacterType)
+    End Function
+
+    Function GetStatistic(statisticType As StatisticType) As Long
+        Return If(CharacterStatisticData.Read(Id, statisticType), statisticType.InitialValue(CharacterType))
+    End Function
+
+    ReadOnly Property IsDead As Boolean
+        Get
+            Return IsMinimum(StatisticType.Health)
+        End Get
+    End Property
 End Class

@@ -31,4 +31,8 @@
             (CharacterIdColumn, characterId)).
             ToDictionary(Function(x) x.Item1, Function(x) x.Item2)
     End Function
+
+    Public Sub Write(characterId As Long, statisticType As Long, statisticValue As Long)
+        ReplaceRecord(AddressOf Initialize, TableName, (CharacterIdColumn, characterId), (StatisticTypeColumn, statisticType), (StatisticValueColumn, statisticValue))
+    End Sub
 End Module

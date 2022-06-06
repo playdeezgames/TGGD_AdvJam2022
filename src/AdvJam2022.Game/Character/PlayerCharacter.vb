@@ -16,6 +16,28 @@ Public Class PlayerCharacter
         End If
         Location = Location.Routes(direction).ToLocation
         builder.AppendLine($"You go {direction.Name}.")
+        ApplyEffects(builder)
     End Sub
 
+    Private Sub ApplyEffects(builder As StringBuilder)
+        ApplyHunger(builder)
+    End Sub
+
+    Private Sub ApplyHunger(builder As StringBuilder)
+        If IsMinimum(StatisticType.Hunger) Then
+            builder.AppendLine("[red]Yer starving![/]")
+            ChangeStatistic(StatisticType.Health, -1)
+            Return
+        End If
+        ChangeStatistic(StatisticType.Hunger, -1)
+    End Sub
+
+    Private Sub ChangeStatistic(statisticType As StatisticType, delta As Long)
+        SetStatistic(statisticType, GetStatistic(statisticType) + delta)
+    End Sub
+
+    Private Sub SetStatistic(statisticType As StatisticType, statisticValue As Long)
+        statisticValue = Math.Max(statisticValue, statisticType.MinimumValue(CharacterType))
+        CharacterStatisticData.Write(Id, statisticType, statisticValue)
+    End Sub
 End Class
