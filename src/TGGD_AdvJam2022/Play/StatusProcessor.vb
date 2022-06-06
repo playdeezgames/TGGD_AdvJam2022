@@ -2,7 +2,16 @@
     Friend Sub Run(player As PlayerCharacter)
         AnsiConsole.MarkupLine("[aqua]Yer Status:[/]")
         ShowAchievements(player)
+        ShowStatistics(player)
         OkProcessor.Run()
+    End Sub
+
+    Private Sub ShowStatistics(player As PlayerCharacter)
+        AnsiConsole.MarkupLine("Statistics:")
+        Dim statistics = player.Statistics
+        For Each statistic In statistics
+            AnsiConsole.MarkupLine($"{statistic.Key.Name}: {statistic.Value}")
+        Next
     End Sub
 
     Private Sub ShowAchievements(player As PlayerCharacter)

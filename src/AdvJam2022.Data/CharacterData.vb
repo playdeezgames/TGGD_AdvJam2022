@@ -24,6 +24,10 @@ Public Module CharacterData
         WriteColumnValue(AddressOf Initialize, TableName, (LocationIdColumn, locationId), (CharacterIdColumn, characterId))
     End Sub
 
+    Public Function ReadCharacterType(characterId As Long) As Long?
+        Return ReadColumnValue(Of Long, Long)(AddressOf Initialize, TableName, CharacterTypeColumn, (CharacterIdColumn, characterId))
+    End Function
+
     Public Function ReadForCharacterType(characterType As Long) As IEnumerable(Of Long)
         Return ReadRecordsWithColumnValue(Of Long, Long)(
             AddressOf Initialize,

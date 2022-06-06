@@ -11,6 +11,20 @@
         Return result
     End Function
 
+    Public ReadOnly Property Statistics As IReadOnlyDictionary(Of StatisticType, Long)
+        Get
+            Return AllStatistics.ToDictionary(Of StatisticType, Long)(
+                Function(x) x,
+                Function(x) If(CharacterStatisticData.Read(Id, x), x.InitialValue(CharacterType)))
+        End Get
+    End Property
+
+    ReadOnly Property CharacterType As CharacterType
+        Get
+            Return CType(CharacterData.ReadCharacterType(Id).Value, CharacterType)
+        End Get
+    End Property
+
     ReadOnly Property CanMove As Boolean
         Get
             Return Location.Routes.Any
