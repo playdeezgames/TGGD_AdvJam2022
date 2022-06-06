@@ -13,7 +13,20 @@
                 FOREIGN KEY ([{CharacterIdColumn}]) REFERENCES [{CharacterData.TableName}]([{CharacterData.CharacterIdColumn}])
             );")
     End Sub
+
+    Public Sub Write(characterId As Long, achievementType As Long)
+        ReplaceRecord(
+            AddressOf Initialize,
+            TableName,
+            (CharacterIdColumn, characterId),
+            (AchievementTypeColumn, achievementType))
+    End Sub
+
     Public Function Read(characterId As Long) As IEnumerable(Of Long)
-        Return ReadRecordsWithColumnValue(Of Long, Long)(AddressOf Initialize, TableName, AchievementTypeColumn, (CharacterIdColumn, characterId))
+        Return ReadRecordsWithColumnValue(Of Long, Long)(
+            AddressOf Initialize,
+            TableName,
+            AchievementTypeColumn,
+            (CharacterIdColumn, characterId))
     End Function
 End Module

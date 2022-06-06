@@ -7,6 +7,7 @@ Module InPlayProcessor
         While Not done
             AnsiConsole.Clear()
             DisplayStatus(player, builder.ToString)
+            UpdateAchievements(player)
             builder.Clear()
             DisplayExits(player)
             Dim prompt As New SelectionPrompt(Of String) With {.Title = "[olive]Now What?[/]"}
@@ -24,6 +25,17 @@ Module InPlayProcessor
                     MoveProcessor.Run(player, builder)
             End Select
         End While
+    End Sub
+
+    Private Sub UpdateAchievements(player As PlayerCharacter)
+        For Each achievement In AllAchievements
+            If Not player.HasAchievement(achievement) Then
+                player.CheckAchievement(achievement)
+                If player.HasAchievement(achievement) Then
+                    AnsiConsole.MarkupLine($"[green]You have achieved {achievement.Name}![/]")
+                End If
+            End If
+        Next
     End Sub
 
     Private Sub DisplayExits(player As PlayerCharacter)

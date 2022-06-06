@@ -17,6 +17,10 @@
         End Get
     End Property
 
+    Friend Sub Achieve(achievementType As AchievementType)
+        CharacterAchievementData.Write(Me.Id, achievementType)
+    End Sub
+
     Function CanMoveDirection(direction As Direction) As Boolean
         Return Location.Routes.ContainsKey(direction)
     End Function
@@ -36,4 +40,12 @@
             Return CharacterAchievementData.Read(Id).Select(Function(x) CType(x, AchievementType))
         End Get
     End Property
+
+    Function HasAchievement(achievement As AchievementType) As Boolean
+        Return Achievements.Contains(achievement)
+    End Function
+
+    Function CheckAchievement(achievement As AchievementType) As Boolean
+        Return achievement.Check(Me)
+    End Function
 End Class

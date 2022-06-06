@@ -1,8 +1,14 @@
 ﻿Public MustInherit Class AchievementTypeDescriptor
     MustOverride ReadOnly Property Name As String
     MustOverride ReadOnly Property Score As Long
+    MustOverride Function Check(character As Character) As Boolean
 End Class
 Public Module AchievementTypeDescriptorUtility
+    Public ReadOnly Property AllAchievements As IEnumerable(Of AchievementType)
+        Get
+            Return AchievementTypeDescriptors.Keys
+        End Get
+    End Property
     Friend ReadOnly AchievementTypeDescriptors As IReadOnlyDictionary(Of AchievementType, AchievementTypeDescriptor) =
         New Dictionary(Of AchievementType, AchievementTypeDescriptor) From
         {

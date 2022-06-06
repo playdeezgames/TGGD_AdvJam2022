@@ -22,6 +22,10 @@
         End Get
     End Property
 
+    Friend Function VisitedBy(character As Character) As Boolean
+        Return CharacterLocationData.Exists(character.Id, Id)
+    End Function
+
     Friend Shared Function FindAll(locationType As LocationType) As IEnumerable(Of Location)
         Return LocationData.ReadForLocationType(locationType).Select(AddressOf Location.FromId)
     End Function

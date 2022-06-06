@@ -18,4 +18,13 @@
     Public Sub Write(characterId As Long, locationId As Long)
         ReplaceRecord(AddressOf Initialize, TableName, (CharacterIdColumn, characterId), (LocationIdColumn, locationId))
     End Sub
+
+    Public Function Exists(characterId As Long, locationId As Long) As Boolean
+        Return ReadColumnValue(Of Long, Long, Long)(
+            AddressOf Initialize,
+            TableName,
+            LocationIdColumn,
+            (CharacterIdColumn, characterId),
+            (LocationIdColumn, locationId)).HasValue
+    End Function
 End Module

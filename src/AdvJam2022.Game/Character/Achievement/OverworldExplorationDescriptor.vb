@@ -12,4 +12,12 @@
             Return 1
         End Get
     End Property
+
+    Public Overrides Function Check(character As Character) As Boolean
+        If Location.FindAll(LocationType.Generic).All(Function(x) x.VisitedBy(character)) Then
+            character.Achieve(AchievementType.OverworldExploration)
+            Return True
+        End If
+        Return False
+    End Function
 End Class

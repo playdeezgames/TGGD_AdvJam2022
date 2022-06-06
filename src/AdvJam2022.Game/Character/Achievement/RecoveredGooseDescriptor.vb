@@ -12,4 +12,8 @@
             Return 10
         End Get
     End Property
+
+    Public Overrides Function Check(character As Character) As Boolean
+        Return False
+    End Function
 End Class
