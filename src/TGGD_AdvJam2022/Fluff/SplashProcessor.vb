@@ -9,6 +9,7 @@
             }
         AnsiConsole.Write(figlet)
         AnsiConsole.WriteLine("A production of TheGrumpyGameDev")
+        SfxPlayer.Play(Sfx.Title)
         OkProcessor.Run()
     End Sub
 End Module
