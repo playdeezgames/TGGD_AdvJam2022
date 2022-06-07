@@ -2,8 +2,17 @@
     Const LocationCount As Integer = 24
     Function Create() As PlayerCharacter
         CreateOverworld()
+        CreateFooMarT()
         Return CreatePlayer()
     End Function
+
+    Private Sub CreateFooMarT()
+        Dim candidates = Location.FindAll(LocationType.Generic).Where(Function(x) Not x.HasRoute(Direction.Inward))
+        Dim outside = RNG.FromEnumerable(candidates)
+        Dim inside = Location.Create(LocationType.FooMarT)
+        Route.Create(outside, Direction.Inward, inside, RouteType.Door)
+        Route.Create(inside, Direction.Outward, outside, RouteType.Door)
+    End Sub
 
     Private Sub CreateOverworld()
         Dim locations As New List(Of Location) From

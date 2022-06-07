@@ -3,6 +3,7 @@
 Public Enum RouteType
     None
     Road
+    Door
 End Enum
 Public Module RouteTypeExtensions
     <Extension>

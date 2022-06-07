@@ -13,7 +13,9 @@ Public Module DirectionDescriptorUtility
             {Direction.North, New NorthDirectionDescriptor},
             {Direction.East, New EastDirectionDescriptor},
             {Direction.South, New SouthDirectionDescriptor},
-            {Direction.West, New WestDirectionDescriptor}
+            {Direction.West, New WestDirectionDescriptor},
+            {Direction.Inward, New InwardDirectionDescriptor},
+            {Direction.Outward, New OutwardDirectionDescriptor}
         }
     Public ReadOnly Property AllDirections As IReadOnlyList(Of Direction)
         Get

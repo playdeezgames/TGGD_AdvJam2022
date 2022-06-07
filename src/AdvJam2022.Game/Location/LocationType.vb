@@ -2,4 +2,5 @@
     None
     Start
     Generic
+    FooMarT
 End Enum
