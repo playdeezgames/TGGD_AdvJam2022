@@ -10,7 +10,7 @@
     End Property
     ReadOnly Property Items As IEnumerable(Of Item)
         Get
-            Return InventoryItemData.ReadForInventory(Id).Select(Function(x) New Item(x))
+            Return InventoryItemData.ReadForInventory(Id).Select(AddressOf Item.FromId)
         End Get
     End Property
 End Class
