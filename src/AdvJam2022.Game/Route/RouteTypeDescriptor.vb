@@ -6,6 +6,7 @@ Friend Module RouteTypeDescriptorUtility
         New Dictionary(Of RouteType, RouteTypeDescriptor) From
         {
             {RouteType.Door, New DoorDescriptor},
+            {RouteType.Path, New PathDescriptor},
             {RouteType.Road, New RoadDescriptor}
         }
 End Module

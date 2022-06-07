@@ -3,4 +3,5 @@
     Start
     Generic
     FooMarT
+    Wilderness
 End Enum
