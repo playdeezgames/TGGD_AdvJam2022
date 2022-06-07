@@ -76,4 +76,15 @@
             Return IsMinimum(StatisticType.Health)
         End Get
     End Property
+
+    ReadOnly Property Inventory As Inventory
+        Get
+            Dim inventoryId As Long? = CharacterInventoryData.ReadForCharacter(Id)
+            If Not inventoryId.hasValue Then
+                inventoryId = InventoryData.Create()
+                CharacterInventoryData.Write(Id, inventoryId.Value)
+            End If
+            Return New Inventory(inventoryId.Value)
+        End Get
+    End Property
 End Class

@@ -20,6 +20,9 @@ Module InPlayProcessor
             If player.CanMove Then
                 prompt.AddChoice(MoveText)
             End If
+            If Not player.Inventory.IsEmpty Then
+                prompt.AddChoice(InventoryText)
+            End If
             prompt.AddChoice(StatusText)
             prompt.AddChoice(GameMenuText)
             Select Case AnsiConsole.Prompt(prompt)
