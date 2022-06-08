@@ -4,6 +4,9 @@ Public Enum ItemType
     None
     WrappedTwinkie
     Twinkie
+    PlantFiber
+    Stick
+    Rock
 End Enum
 Public Module ItemTypeExtensions
     <Extension>

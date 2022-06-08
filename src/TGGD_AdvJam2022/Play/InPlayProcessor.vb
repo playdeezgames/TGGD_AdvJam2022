@@ -36,6 +36,8 @@ Module InPlayProcessor
                     StatusProcessor.Run(player)
                 Case MoveText
                     MoveProcessor.Run(player, builder)
+                Case InventoryText
+                    InventoryProcessor.Run(player)
                 Case Else
                     VerbProcessor.Run(player, ParseVerb(answer), builder)
             End Select
