@@ -48,6 +48,7 @@ Module InPlayProcessor
     End Sub
 
     Private Sub DisplayExits(player As PlayerCharacter)
+        AnsiConsole.MarkupLine($"Yer at {player.Location.Name}")
         If player.CanMove Then
             AnsiConsole.MarkupLine($"Exits: {String.Join(", ", player.Location.Routes.Select(Function(x) x.Value.Name))}")
         End If

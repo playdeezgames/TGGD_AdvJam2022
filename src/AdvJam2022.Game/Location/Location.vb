@@ -4,6 +4,18 @@
         Id = locationId
     End Sub
 
+    ReadOnly Property Name As String
+        Get
+            Return LocationType.Name
+        End Get
+    End Property
+
+    ReadOnly Property LocationType As LocationType
+        Get
+            Return CType(LocationData.ReadLocationType(Id).Value, LocationType)
+        End Get
+    End Property
+
     Friend Shared Function Create(locationType As LocationType) As Location
         Return New Location(LocationData.Create(locationType))
     End Function

@@ -10,6 +10,11 @@
                 [{LocationTypeColumn}] INT NOT NULL
             );")
     End Sub
+
+    Public Function ReadLocationType(locationId As Long) As Long?
+        Return ReadColumnValue(Of Long, Long)(AddressOf Initialize, TableName, LocationTypeColumn, (LocationIdColumn, locationId))
+    End Function
+
     Public Function Create(locationType As Long) As Long
         Return CreateRecord(AddressOf Initialize, TableName, (LocationTypeColumn, locationType))
     End Function
