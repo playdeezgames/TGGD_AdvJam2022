@@ -23,15 +23,21 @@ Module InPlayProcessor
             If Not player.Inventory.IsEmpty Then
                 prompt.AddChoice(InventoryText)
             End If
+            For Each verb In player.PossibleVerbs
+                prompt.AddChoice(verb.Name)
+            Next
             prompt.AddChoice(StatusText)
             prompt.AddChoice(GameMenuText)
-            Select Case AnsiConsole.Prompt(prompt)
+            Dim answer = AnsiConsole.Prompt(prompt)
+            Select Case answer
                 Case GameMenuText
                     done = GameMenuProcessor.Run()
                 Case StatusText
                     StatusProcessor.Run(player)
                 Case MoveText
                     MoveProcessor.Run(player, builder)
+                Case Else
+                    VerbProcessor.Run(player, ParseVerb(answer), builder)
             End Select
         End While
     End Sub

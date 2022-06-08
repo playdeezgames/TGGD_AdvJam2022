@@ -45,4 +45,13 @@
     Private Shared Function FromId(locationId As Long) As Location
         Return New Location(locationId)
     End Function
+
+    Friend Function Forage() As IEnumerable(Of Item)
+        Dim result As New List(Of Item)
+        Dim itemTypes = LocationType.GenerateForage()
+        For Each itemType In itemTypes
+            result.Add(Item.Create(itemType))
+        Next
+        Return result
+    End Function
 End Class

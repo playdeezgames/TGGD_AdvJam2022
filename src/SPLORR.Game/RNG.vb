@@ -2,7 +2,7 @@
 
 Public Module RNG
     Private ReadOnly random As New Random
-    Function FromGenerator(Of TGenerated)(table As Dictionary(Of TGenerated, Integer)) As TGenerated
+    Function FromGenerator(Of TGenerated)(table As IReadOnlyDictionary(Of TGenerated, Integer)) As TGenerated
         Dim generated = random.Next(table.Values.Sum)
         For Each entry In table
             generated -= entry.Value

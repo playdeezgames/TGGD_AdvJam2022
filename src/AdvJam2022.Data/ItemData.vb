@@ -1,4 +1,4 @@
-﻿Module ItemData
+﻿Public Module ItemData
     Friend Const TableName = "Items"
     Friend Const ItemIdColumn = "ItemId"
     Friend Const ItemTypeColumn = "ItemType"
@@ -10,4 +10,12 @@
                 [{ItemTypeColumn}] INT NOT NULL
             );")
     End Sub
+
+    Public Function ReadItemType(itemId As Long) As Long?
+        Return ReadColumnValue(Of Long, Long)(AddressOf Initialize, TableName, ItemTypeColumn, (ItemIdColumn, itemId))
+    End Function
+
+    Public Function Create(itemType As Long) As Long
+        Return CreateRecord(AddressOf Initialize, TableName, (ItemTypeColumn, itemType))
+    End Function
 End Module

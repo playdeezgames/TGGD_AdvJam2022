@@ -40,4 +40,22 @@ Public Class PlayerCharacter
         statisticValue = Math.Max(statisticValue, statisticType.MinimumValue(CharacterType))
         CharacterStatisticData.Write(Id, statisticType, statisticValue)
     End Sub
+    Public Sub Forage(builder As StringBuilder)
+        If Not CanDoVerb(Verb.Forage) Then
+            builder.AppendLine("You cannot forage now!")
+            Return
+        End If
+        ApplyEffects(builder)
+        Dim items = Location.Forage()
+        If Not items.any Then
+            builder.AppendLine("You forage and find nothing!")
+            Return
+        End If
+        builder.Append("You foraged: ")
+        builder.AppendJoin(", ", items.Select(Function(x) x.Name))
+        builder.AppendLine()
+        For Each item In items
+            Inventory.Add(item)
+        Next
+    End Sub
 End Class

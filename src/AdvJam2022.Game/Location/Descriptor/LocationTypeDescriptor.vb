@@ -1,6 +1,9 @@
 ﻿Public MustInherit Class LocationTypeDescriptor
     MustOverride ReadOnly Property Name As String
 
+    Overridable Function GenerateForage() As IEnumerable(Of ItemType)
+        Return New List(Of ItemType)
+    End Function
 End Class
 Friend Module LocationTypeDescriptorUtility
     Public ReadOnly LocationTypeDescriptors As IReadOnlyDictionary(Of LocationType, LocationTypeDescriptor) =

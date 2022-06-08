@@ -4,6 +4,16 @@
         Id = characterId
     End Sub
 
+    ReadOnly Property PossibleVerbs As IEnumerable(Of Verb)
+        Get
+            Return AllVerbs.Where(Function(x) CanDoVerb(x))
+        End Get
+    End Property
+
+    Function CanDoVerb(verb As Verb) As Boolean
+        Return verb.CanCharacterPerform(Me)
+    End Function
+
     Protected Shared Function CreateCharacter(characterType As CharacterType, location As Location) As Character
         Dim result = New Character(CharacterData.Create(characterType, location.Id)) With {
             .Location = location
