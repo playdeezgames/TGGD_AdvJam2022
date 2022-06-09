@@ -5,8 +5,20 @@
         CreateOverworld()
         CreateFooMarT()
         CreateWilderness()
+        CreateNpcs()
         Return CreatePlayer()
     End Function
+
+    Private Sub CreateNpcs()
+        For Each entry In NpcTypeDescriptors
+            Dim quantity = entry.Value.Quantity
+            While quantity > 0
+                Dim candidates = Location.FindAll(entry.Value.LocationType).Where(Function(x) Not x.HasNpc)
+                Npc.Create(RNG.FromEnumerable(candidates), entry.Key)
+                quantity -= 1
+            End While
+        Next
+    End Sub
 
     Private Sub CreateWilderness()
         Dim wildernessLocations As New List(Of Location)

@@ -15,6 +15,7 @@ Module InPlayProcessor
                 Exit While
             End If
             builder.Clear()
+            DisplayNpc(player.Location)
             DisplayExits(player)
             Dim prompt As New SelectionPrompt(Of String) With {.Title = "[olive]Now What?[/]"}
             If player.CanMove Then
@@ -42,6 +43,12 @@ Module InPlayProcessor
                     VerbProcessor.Run(player, ParseVerb(answer), builder)
             End Select
         End While
+    End Sub
+
+    Private Sub DisplayNpc(location As Location)
+        If location.HasNpc Then
+            AnsiConsole.MarkupLine($"{location.Npc.Name} is here.")
+        End If
     End Sub
 
     Friend Sub UpdateAchievements(player As PlayerCharacter)

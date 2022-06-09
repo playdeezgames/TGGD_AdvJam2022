@@ -4,11 +4,23 @@ Public Class PlayerCharacter
         MyBase.New(CharacterData.ReadForCharacterType(CharacterType.Player).Single)
     End Sub
 
+    Public Sub Talk(builder As StringBuilder)
+        If Not Location.HasNpc Then
+            builder.AppendLine("You talk to yerself, but find yerself a boring person to talk to.")
+        End If
+        Location.Npc.Talk(Me, builder)
+    End Sub
+
     Public Shared Function CreatePlayerCharacter(location As Location) As PlayerCharacter
         CharacterData.ClearForCharacterType(CharacterType.Player)
         Character.CreateCharacter(CharacterType.Player, location)
         Return New PlayerCharacter()
     End Function
+
+    Friend Function HasItemType(itemType As ItemType) As Boolean
+        Return Inventory.ItemStacks.ContainsKey(itemType)
+    End Function
+
     Public Sub Move(direction As Direction, builder As StringBuilder)
         If Not CanMoveDirection(direction) Then
             builder.AppendLine($"You cannot go {direction.Name}.")
