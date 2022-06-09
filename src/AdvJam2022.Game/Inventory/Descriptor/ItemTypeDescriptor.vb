@@ -9,6 +9,7 @@ Friend Module ItemTypeDescriptorUtility
             {ItemType.Rock, New RockDescriptor},
             {ItemType.SharpRock, New SharpRockDescriptor},
             {ItemType.Stick, New StickDescriptor},
+            {ItemType.StickBundle, New StickBundleDescriptor},
             {ItemType.StoneKnife, New StoneKnifeDescriptor},
             {ItemType.Twine, New TwineDescriptor},
             {ItemType.Twinkie, New TwinkieDescriptor},

@@ -45,6 +45,16 @@ Public Module RecipeUtility
                 New Dictionary(Of ItemType, Long) From
                 {
                     {ItemType.StoneKnife, 1}
+                }),
+            New Recipe(
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.Twine, 2},
+                    {ItemType.Stick, 12}
+                },
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.StickBundle, 1}
                 })
         }
 End Module

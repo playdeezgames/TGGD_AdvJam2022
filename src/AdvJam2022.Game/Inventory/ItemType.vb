@@ -10,6 +10,7 @@ Public Enum ItemType
     Twine
     SharpRock
     StoneKnife
+    StickBundle
 End Enum
 Public Module ItemTypeExtensions
     <Extension>
