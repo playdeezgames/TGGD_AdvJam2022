@@ -24,6 +24,27 @@ Public Module RecipeUtility
                 New Dictionary(Of ItemType, Long) From
                 {
                     {ItemType.Twine, 1}
+                }),
+            New Recipe(
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.Rock, 2}
+                },
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.Rock, 1},
+                    {ItemType.SharpRock, 1}
+                }),
+            New Recipe(
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.SharpRock, 1},
+                    {ItemType.Twine, 1},
+                    {ItemType.Stick, 1}
+                },
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.StoneKnife, 1}
                 })
         }
 End Module

@@ -8,6 +8,8 @@ Public Enum ItemType
     Stick
     Rock
     Twine
+    SharpRock
+    StoneKnife
 End Enum
 Public Module ItemTypeExtensions
     <Extension>
