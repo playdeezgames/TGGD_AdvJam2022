@@ -1,8 +1,12 @@
 ﻿Module CraftProcessor
     Friend Sub Run(player As PlayerCharacter)
         Dim done = False
+        Dim builder As New StringBuilder
         While Not done
             AnsiConsole.Clear()
+            DisplayStatus(player, builder.ToString)
+            builder.Clear()
+            UpdateAchievements(player)
             Dim prompt As New SelectionPrompt(Of String) With {.Title = "[olive]Craft what?[/]"}
             prompt.AddChoice(NeverMindText)
             Dim recipes = AllRecipes.Where(AddressOf player.CanCraft)
@@ -14,7 +18,7 @@
                 Case NeverMindText
                     done = True
                 Case Else
-                    player.Craft(recipes.Single(Function(x) x.Name = answer))
+                    player.Craft(recipes.Single(Function(x) x.Name = answer), builder)
             End Select
         End While
     End Sub

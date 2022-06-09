@@ -44,7 +44,7 @@ Module InPlayProcessor
         End While
     End Sub
 
-    Private Sub UpdateAchievements(player As PlayerCharacter)
+    Friend Sub UpdateAchievements(player As PlayerCharacter)
         For Each achievement In AllAchievements
             If Not player.HasAchievement(achievement) Then
                 player.CheckAchievement(achievement)
@@ -62,7 +62,7 @@ Module InPlayProcessor
         End If
     End Sub
 
-    Private Sub DisplayStatus(player As PlayerCharacter, message As String)
+    Friend Sub DisplayStatus(player As PlayerCharacter, message As String)
         AnsiConsole.MarkupLine(message)
     End Sub
 End Module

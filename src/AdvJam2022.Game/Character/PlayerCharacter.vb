@@ -19,8 +19,9 @@ Public Class PlayerCharacter
         ApplyEffects(builder)
     End Sub
 
-    Public Sub Craft(recipe As Recipe)
-        Inventory.Craft(recipe)
+    Public Sub Craft(recipe As Recipe, builder As StringBuilder)
+        Inventory.Craft(recipe, builder)
+        ApplyEffects(builder)
     End Sub
 
     Public Function CanCraft(recipe As Recipe) As Boolean

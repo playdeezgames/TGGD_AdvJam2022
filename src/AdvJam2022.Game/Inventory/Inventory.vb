@@ -28,11 +28,12 @@
         Return recipe.Inputs.All(Function(x) ItemCount(x.Key) >= x.Value)
     End Function
 
-    Friend Sub Craft(recipe As Recipe)
+    Friend Sub Craft(recipe As Recipe, builder As StringBuilder)
         If CanCraft(recipe) Then
             For Each input In recipe.Inputs
                 Dim items = ItemStacks(input.Key).Take(CInt(input.Value))
                 For Each item In items
+                    builder.AppendLine($"-{item.Name}")
                     item.Destroy()
                 Next
             Next
@@ -40,7 +41,9 @@
                 Dim quantity = output.Value
                 While quantity > 0
                     quantity -= 1
-                    Add(Item.Create(output.Key))
+                    Dim item = Game.Item.Create(output.Key)
+                    Add(item)
+                    builder.AppendLine($"+{Item.Name}")
                 End While
             Next
         End If
