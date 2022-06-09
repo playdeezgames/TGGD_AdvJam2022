@@ -1,5 +1,6 @@
 ﻿Friend Module Choices
     Friend Const AbandonGameText = "Abandon Game"
+    Friend Const CraftText = "Craft..."
     Friend Const GameMenuText = "Game Menu"
     Friend Const InventoryText = "Inventory"
     Friend Const LoadGameText = "Load Game..."

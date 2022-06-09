@@ -8,6 +8,7 @@ Friend Module ItemTypeDescriptorUtility
             {ItemType.PlantFiber, New PlantFiberDescriptor},
             {ItemType.Rock, New RockDescriptor},
             {ItemType.Stick, New StickDescriptor},
+            {ItemType.Twine, New TwineDescriptor},
             {ItemType.Twinkie, New TwinkieDescriptor},
             {ItemType.WrappedTwinkie, New WrappedTwinkieDescriptor}
         }

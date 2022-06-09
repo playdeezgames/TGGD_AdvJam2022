@@ -23,4 +23,16 @@
             Return Items.GroupBy(Function(x) x.ItemType).ToDictionary(Function(x) x.Key, Function(x) x.AsEnumerable)
         End Get
     End Property
+
+    Public Function CanCraft(recipe As Recipe) As Boolean
+        Return recipe.Inputs.All(Function(x) ItemCount(x.Key) >= x.Value)
+    End Function
+
+    Private Function ItemCount(itemType As ItemType) As Long
+        Dim itemStacks = Me.ItemStacks.Where(Function(x) x.Key = itemType)
+        If Not itemStacks.Any Then
+            Return 0
+        End If
+        Return itemStacks.First.Value.LongCount
+    End Function
 End Class

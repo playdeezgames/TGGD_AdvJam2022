@@ -9,10 +9,15 @@
             Next
             Dim prompt As New SelectionPrompt(Of String) With {.Title = "[olive]What Now?[/]"}
             prompt.AddChoice(NeverMindText)
+            If AllRecipes.Any(AddressOf player.CanCraft) Then
+                prompt.AddChoice(CraftText)
+            End If
             Dim answer = AnsiConsole.Prompt(prompt)
             Select Case answer
                 Case NeverMindText
                     done = True
+                Case CraftText
+                    CraftProcessor.Run(player)
             End Select
         End While
     End Sub

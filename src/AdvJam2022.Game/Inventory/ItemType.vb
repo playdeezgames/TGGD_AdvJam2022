@@ -7,6 +7,7 @@ Public Enum ItemType
     PlantFiber
     Stick
     Rock
+    Twine
 End Enum
 Public Module ItemTypeExtensions
     <Extension>
