@@ -13,6 +13,8 @@
             Select Case answer
                 Case NeverMindText
                     done = True
+                Case Else
+                    player.Craft(recipes.Single(Function(x) x.Name = answer))
             End Select
         End While
     End Sub

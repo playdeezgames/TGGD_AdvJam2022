@@ -20,4 +20,8 @@
     Friend Shared Function Create(itemType As ItemType) As Item
         Return New Item(ItemData.Create(itemType))
     End Function
+
+    Friend Sub Destroy()
+        ItemData.Clear(Id)
+    End Sub
 End Class

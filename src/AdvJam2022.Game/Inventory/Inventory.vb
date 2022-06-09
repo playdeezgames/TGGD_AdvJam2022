@@ -28,6 +28,24 @@
         Return recipe.Inputs.All(Function(x) ItemCount(x.Key) >= x.Value)
     End Function
 
+    Friend Sub Craft(recipe As Recipe)
+        If CanCraft(recipe) Then
+            For Each input In recipe.Inputs
+                Dim items = ItemStacks(input.Key).Take(CInt(input.Value))
+                For Each item In items
+                    item.Destroy()
+                Next
+            Next
+            For Each output In recipe.Outputs
+                Dim quantity = output.Value
+                While quantity > 0
+                    quantity -= 1
+                    Add(Item.Create(output.Key))
+                End While
+            Next
+        End If
+    End Sub
+
     Private Function ItemCount(itemType As ItemType) As Long
         Dim itemStacks = Me.ItemStacks.Where(Function(x) x.Key = itemType)
         If Not itemStacks.Any Then
