@@ -3,6 +3,7 @@
 Public Enum Verb
     None
     Forage
+    Talk
 End Enum
 Public Module VerbExtensions
     <Extension>

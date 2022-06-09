@@ -34,6 +34,18 @@
         End Get
     End Property
 
+    Public ReadOnly Property HasNpc As Boolean
+        Get
+            Return Npc IsNot Nothing
+        End Get
+    End Property
+
+    Public ReadOnly Property Npc As Npc
+        Get
+            Return Npc.FromId(If(NpcData.Exists(Id), Id, Nothing))
+        End Get
+    End Property
+
     Friend Function VisitedBy(character As Character) As Boolean
         Return CharacterLocationData.Exists(character.Id, Id)
     End Function
