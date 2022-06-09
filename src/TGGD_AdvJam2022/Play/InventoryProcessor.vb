@@ -3,7 +3,7 @@
         Dim done = False
         While Not done
             AnsiConsole.Clear()
-            AnsiConsole.MarkupLine("Yer Inventory:")
+            AnsiConsole.MarkupLine("[aqua]Yer Inventory:[/]")
             For Each itemStack In player.Inventory.ItemStacks
                 AnsiConsole.MarkupLine($"{itemStack.Key.Name} (x{itemStack.Value.Count})")
             Next
