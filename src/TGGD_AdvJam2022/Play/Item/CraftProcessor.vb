@@ -4,9 +4,9 @@
         Dim builder As New StringBuilder
         While Not done
             AnsiConsole.Clear()
-            DisplayStatus(player, builder.ToString)
-            builder.Clear()
-            UpdateAchievements(player)
+
+            ShowMessagesAndAchievements(player, builder)
+
             Dim prompt As New SelectionPrompt(Of String) With {.Title = "[olive]Craft what?[/]"}
             prompt.AddChoice(NeverMindText)
             Dim recipes = AllRecipes.Where(AddressOf player.CanCraft)

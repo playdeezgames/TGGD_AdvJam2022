@@ -21,6 +21,24 @@
         Return result
     End Function
 
+    Friend Sub ChangeHunger(delta As Long)
+        Dim anticipatedHunger = GetStatistic(StatisticType.Hunger) + delta
+        SetStatistic(StatisticType.Hunger, anticipatedHunger)
+        Dim updatedHunger = GetStatistic(StatisticType.Hunger)
+        Dim overUnder = If(delta > 0 AndAlso anticipatedHunger > updatedHunger, anticipatedHunger - updatedHunger,
+            If(delta < 0 AndAlso anticipatedHunger < updatedHunger, anticipatedHunger - updatedHunger, 0))
+        ChangeStatistic(StatisticType.Health, overUnder)
+    End Sub
+
+    Private Sub ChangeStatistic(statisticType As StatisticType, delta As Long)
+        SetStatistic(statisticType, GetStatistic(statisticType) + delta)
+    End Sub
+
+    Private Sub SetStatistic(statisticType As StatisticType, statisticValue As Long)
+        statisticValue = Math.Min(Math.Max(statisticValue, statisticType.MinimumValue(CharacterType)), statisticType.MaximumValue(CharacterType))
+        CharacterStatisticData.Write(Id, statisticType, statisticValue)
+    End Sub
+
     Public ReadOnly Property Statistics As IReadOnlyDictionary(Of StatisticType, Long)
         Get
             Return AllStatistics.ToDictionary(

@@ -2,6 +2,7 @@
     MustOverride ReadOnly Property Name As String
     MustOverride Function InitialValue(characterType As CharacterType) As Long
     MustOverride Function MinimumValue(characterType As CharacterType) As Long
+    MustOverride Function MaximumValue(characterType As CharacterType) As Long
 End Class
 Public Module StatisticTypeDescriptorUtility
     ReadOnly Property AllStatistics As IEnumerable(Of StatisticType)

@@ -24,4 +24,12 @@ Public Module ItemTypeExtensions
     Function CanUse(itemType As ItemType) As Boolean
         Return ItemTypeDescriptors(itemType).CanUse
     End Function
+    <Extension>
+    Sub Use(itemType As ItemType, item As Item, character As Character, builder As StringBuilder)
+        ItemTypeDescriptors(itemType).Use(item, character, builder)
+    End Sub
+    <Extension>
+    Function HungerBenefit(itemType As ItemType) As Long
+        Return ItemTypeDescriptors(itemType).HungerBenefit
+    End Function
 End Module

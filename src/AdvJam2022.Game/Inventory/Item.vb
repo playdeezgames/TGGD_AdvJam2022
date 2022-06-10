@@ -17,11 +17,21 @@
         End Get
     End Property
 
+    Friend ReadOnly Property HungerBenefit As Long
+        Get
+            Return ItemType.HungerBenefit
+        End Get
+    End Property
+
     Friend Shared Function Create(itemType As ItemType) As Item
         Return New Item(ItemData.Create(itemType))
     End Function
 
     Friend Sub Destroy()
         ItemData.Clear(Id)
+    End Sub
+
+    Friend Sub Use(character As Character, builder As StringBuilder)
+        ItemType.Use(Me, character, builder)
     End Sub
 End Class

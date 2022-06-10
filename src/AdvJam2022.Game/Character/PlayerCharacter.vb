@@ -21,6 +21,15 @@ Public Class PlayerCharacter
         Return Inventory.ItemStacks.ContainsKey(itemType)
     End Function
 
+    Public Sub UseItem(itemType As ItemType, builder As StringBuilder)
+        If Not HasItemType(itemType) Then
+            builder.AppendLine($"You don't have any {itemType.Name}!")
+            Return
+        End If
+        Dim item = Inventory.ItemStacks(itemType).First
+        item.Use(Me, builder)
+    End Sub
+
     Public Sub Move(direction As Direction, builder As StringBuilder)
         If Not CanMoveDirection(direction) Then
             builder.AppendLine($"You cannot go {direction.Name}.")
@@ -47,20 +56,10 @@ Public Class PlayerCharacter
     Private Sub ApplyHunger(builder As StringBuilder)
         If IsMinimum(StatisticType.Hunger) Then
             builder.AppendLine("[red]Yer starving![/]")
-            ChangeStatistic(StatisticType.Health, -1)
-            Return
         End If
-        ChangeStatistic(StatisticType.Hunger, -1)
+        ChangeHunger(-1)
     End Sub
 
-    Private Sub ChangeStatistic(statisticType As StatisticType, delta As Long)
-        SetStatistic(statisticType, GetStatistic(statisticType) + delta)
-    End Sub
-
-    Private Sub SetStatistic(statisticType As StatisticType, statisticValue As Long)
-        statisticValue = Math.Max(statisticValue, statisticType.MinimumValue(CharacterType))
-        CharacterStatisticData.Write(Id, statisticType, statisticValue)
-    End Sub
     Public Sub Forage(builder As StringBuilder)
         If Not CanDoVerb(Verb.Forage) Then
             builder.AppendLine("You cannot forage now!")
@@ -68,7 +67,7 @@ Public Class PlayerCharacter
         End If
         ApplyEffects(builder)
         Dim items = Location.Forage()
-        If Not items.any Then
+        If Not items.Any Then
             builder.AppendLine("You forage and find nothing!")
             Return
         End If

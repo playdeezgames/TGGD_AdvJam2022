@@ -6,8 +6,18 @@
             Return False
         End Get
     End Property
+
+    Overridable Sub Use(item As Item, character As Character, builder As StringBuilder)
+        builder.AppendLine("Nothing happens.")
+    End Sub
+
+    Overridable ReadOnly Property HungerBenefit As Long
+        Get
+            Return 0
+        End Get
+    End Property
 End Class
-Friend Module ItemTypeDescriptorUtility
+Public Module ItemTypeDescriptorUtility
     Friend ReadOnly ItemTypeDescriptors As IReadOnlyDictionary(Of ItemType, ItemTypeDescriptor) =
         New Dictionary(Of ItemType, ItemTypeDescriptor) From
         {
@@ -24,4 +34,12 @@ Friend Module ItemTypeDescriptorUtility
             {ItemType.Twinkie, New TwinkieDescriptor},
             {ItemType.WrappedTwinkie, New WrappedTwinkieDescriptor}
         }
+    Friend ReadOnly Property AllItemTypes As IEnumerable(Of ItemType)
+        Get
+            Return ItemTypeDescriptors.Keys
+        End Get
+    End Property
+    Public Function ParseItemType(itemTypeName As String) As ItemType
+        Return AllItemTypes.Single(Function(x) x.Name = itemTypeName)
+    End Function
 End Module

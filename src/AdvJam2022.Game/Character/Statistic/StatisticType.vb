@@ -18,4 +18,8 @@ Public Module StatisticTypeExtensions
     Function MinimumValue(statisticType As StatisticType, characterType As CharacterType) As Long
         Return StatisticTypeDescriptors(statisticType).MinimumValue(characterType)
     End Function
+    <Extension>
+    Function MaximumValue(statisticType As StatisticType, characterType As CharacterType) As Long
+        Return StatisticTypeDescriptors(statisticType).MaximumValue(characterType)
+    End Function
 End Module

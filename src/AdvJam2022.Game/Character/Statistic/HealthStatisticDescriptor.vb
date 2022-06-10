@@ -19,4 +19,8 @@
     Public Overrides Function MinimumValue(characterType As CharacterType) As Long
         Return 0
     End Function
+
+    Public Overrides Function MaximumValue(characterType As CharacterType) As Long
+        Return InitialValue(characterType)
+    End Function
 End Class
