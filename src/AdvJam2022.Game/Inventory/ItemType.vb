@@ -11,6 +11,7 @@ Public Enum ItemType
     SharpRock
     StoneKnife
     StickBundle
+    ThankYouNote
 End Enum
 Public Module ItemTypeExtensions
     <Extension>

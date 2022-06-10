@@ -28,4 +28,8 @@
     Friend Shared Function Create(location As Location, npcType As NpcType) As Npc
         Return FromId(NpcData.Create(location.Id, npcType))
     End Function
+
+    Friend Sub Destroy()
+        NpcData.Clear(Id)
+    End Sub
 End Class

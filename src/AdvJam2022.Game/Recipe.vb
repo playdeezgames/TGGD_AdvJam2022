@@ -50,7 +50,7 @@ Public Module RecipeUtility
                 New Dictionary(Of ItemType, Long) From
                 {
                     {ItemType.Twine, 2},
-                    {ItemType.Stick, 12}
+                    {ItemType.Stick, 6}
                 },
                 New Dictionary(Of ItemType, Long) From
                 {

@@ -21,6 +21,10 @@
         Return ReadColumnValue(Of Long, Long)(AddressOf Initialize, TableName, NpcTypeColumn, (LocationIdColumn, locationId))
     End Function
 
+    Public Sub Clear(locationId As Long)
+        ClearForColumnValue(AddressOf Initialize, TableName, (LocationIdColumn, locationId))
+    End Sub
+
     Public Function Exists(locationId As Long) As Boolean
         Dim temp = ReadColumnValue(Of Long, Long)(AddressOf Initialize, TableName, LocationIdColumn, (LocationIdColumn, locationId))
         Return temp.HasValue
