@@ -40,7 +40,7 @@ Public Module RecipeUtility
                 {
                     {ItemType.SharpRock, 1},
                     {ItemType.Twine, 1},
-                    {ItemType.Stick, 1}
+                    {ItemType.ShortStick, 1}
                 },
                 New Dictionary(Of ItemType, Long) From
                 {
@@ -55,6 +55,17 @@ Public Module RecipeUtility
                 New Dictionary(Of ItemType, Long) From
                 {
                     {ItemType.StickBundle, 1}
+                }),
+            New Recipe(
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.SharpRock, 1},
+                    {ItemType.Stick, 1}
+                },
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.SharpRock, 1},
+                    {ItemType.ShortStick, 2}
                 })
         }
 End Module

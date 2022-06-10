@@ -12,6 +12,7 @@ Public Enum ItemType
     StoneKnife
     StickBundle
     ThankYouNote
+    ShortStick
 End Enum
 Public Module ItemTypeExtensions
     <Extension>

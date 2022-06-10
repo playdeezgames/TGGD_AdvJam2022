@@ -8,6 +8,7 @@ Friend Module ItemTypeDescriptorUtility
             {ItemType.PlantFiber, New PlantFiberDescriptor},
             {ItemType.Rock, New RockDescriptor},
             {ItemType.SharpRock, New SharpRockDescriptor},
+            {ItemType.ShortStick, New ShortStickDescriptor},
             {ItemType.Stick, New StickDescriptor},
             {ItemType.StickBundle, New StickBundleDescriptor},
             {ItemType.StoneKnife, New StoneKnifeDescriptor},

@@ -10,7 +10,6 @@
     Private Shared forageTable As IReadOnlyDictionary(Of ItemType, Integer) =
         New Dictionary(Of ItemType, Integer) From
         {
-            {ItemType.None, 30},
             {ItemType.PlantFiber, 15},
             {ItemType.Stick, 10},
             {ItemType.Rock, 5}
