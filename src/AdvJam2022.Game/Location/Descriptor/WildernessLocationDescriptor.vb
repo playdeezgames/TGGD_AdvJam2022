@@ -12,7 +12,8 @@
         {
             {ItemType.PlantFiber, 15},
             {ItemType.Stick, 10},
-            {ItemType.Rock, 5}
+            {ItemType.Rock, 5},
+            {ItemType.Berry, 5}
         }
 
     Public Overrides Function GenerateForage() As IEnumerable(Of ItemType)

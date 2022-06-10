@@ -13,6 +13,7 @@ Public Enum ItemType
     StickBundle
     ThankYouNote
     ShortStick
+    Berry
 End Enum
 Public Module ItemTypeExtensions
     <Extension>
