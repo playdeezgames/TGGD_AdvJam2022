@@ -3,6 +3,7 @@
 Public Enum NpcType
     None
     BundleSeeker
+    Grocer
 End Enum
 Public Module NpcTypeExtensions
     <Extension>
