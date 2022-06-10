@@ -20,4 +20,8 @@ Public Module ItemTypeExtensions
     Function Name(itemType As ItemType) As String
         Return ItemTypeDescriptors(itemType).Name
     End Function
+    <Extension>
+    Function CanUse(itemType As ItemType) As Boolean
+        Return ItemTypeDescriptors(itemType).CanUse
+    End Function
 End Module

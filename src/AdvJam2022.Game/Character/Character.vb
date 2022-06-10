@@ -97,4 +97,10 @@
             Return New Inventory(inventoryId.Value)
         End Get
     End Property
+
+    Public ReadOnly Property UsableItemTypes As IEnumerable(Of ItemType)
+        Get
+            Return Inventory.ItemStacks.Keys.Where(Function(x) x.CanUse)
+        End Get
+    End Property
 End Class

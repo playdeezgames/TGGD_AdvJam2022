@@ -1,5 +1,11 @@
 ﻿Public MustInherit Class ItemTypeDescriptor
     MustOverride ReadOnly Property Name As String
+
+    Overridable ReadOnly Property CanUse As Boolean
+        Get
+            Return False
+        End Get
+    End Property
 End Class
 Friend Module ItemTypeDescriptorUtility
     Friend ReadOnly ItemTypeDescriptors As IReadOnlyDictionary(Of ItemType, ItemTypeDescriptor) =

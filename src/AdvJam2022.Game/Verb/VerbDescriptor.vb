@@ -7,6 +7,7 @@ Friend Module VerbDescriptorUtility
         New Dictionary(Of Verb, VerbDescriptor) From
         {
             {Verb.Forage, New ForageDescriptor},
-            {Verb.Talk, New TalkDescriptor}
+            {Verb.Talk, New TalkDescriptor},
+            {Verb.UseItem, New UseItemDescriptor}
         }
 End Module
