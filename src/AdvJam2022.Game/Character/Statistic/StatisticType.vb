@@ -4,6 +4,7 @@ Public Enum StatisticType
     None
     Hunger
     Health
+    Money
 End Enum
 Public Module StatisticTypeExtensions
     <Extension>

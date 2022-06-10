@@ -14,6 +14,7 @@ Public Module StatisticTypeDescriptorUtility
         New Dictionary(Of StatisticType, StatisticTypeDescriptor) From
         {
             {StatisticType.Health, New HealthStatisticDescriptor},
-            {StatisticType.Hunger, New HungerStatisticDescriptor}
+            {StatisticType.Hunger, New HungerStatisticDescriptor},
+            {StatisticType.Money, New MoneyStatisticDescriptor}
         }
 End Module
