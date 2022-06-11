@@ -20,6 +20,11 @@
     End Property
 
     Public Overrides Sub DoTalk(player As PlayerCharacter, builder As StringBuilder)
-        Throw New NotImplementedException()
+        Select Case player.GetQuestState(QuestType.DrugMule)
+            Case QuestState.Delivered, QuestState.Completed
+                builder.AppendLine($"{Name} is barely responsive.")
+            Case Else
+                builder.AppendLine($"{Name} doesn't really want to talk to you, and mostly just twitches and fidgets.")
+        End Select
     End Sub
 End Class
