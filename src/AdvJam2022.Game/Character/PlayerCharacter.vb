@@ -78,4 +78,12 @@ Public Class PlayerCharacter
             Inventory.Add(item)
         Next
     End Sub
+
+    Public Sub AcceptQuest(builder As StringBuilder)
+        If Not CanAcceptQuest Then
+            builder.AppendLine("You cannot accept a quest now!")
+            Return
+        End If
+        Location.Npc.AcceptQuest(Me, builder)
+    End Sub
 End Class

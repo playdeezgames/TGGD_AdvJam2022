@@ -47,6 +47,10 @@
         End Get
     End Property
 
+    Friend Sub SetQuestState(questType As QuestType, questState As QuestState)
+        CharacterQuestData.Write(Id, questType, questState)
+    End Sub
+
     ReadOnly Property CharacterType As CharacterType
         Get
             Return CType(CharacterData.ReadCharacterType(Id).Value, CharacterType)
@@ -121,4 +125,14 @@
             Return Inventory.ItemStacks.Keys.Where(Function(x) x.CanUse)
         End Get
     End Property
+
+    Public ReadOnly Property CanAcceptQuest As Boolean
+        Get
+            Return If(Location.Npc?.CanAcceptQuest(Me), False)
+        End Get
+    End Property
+
+    Friend Function GetQuestState(questType As QuestType) As QuestState
+        Return CType(If(CharacterQuestData.Read(Id, questType), 0), QuestState)
+    End Function
 End Class

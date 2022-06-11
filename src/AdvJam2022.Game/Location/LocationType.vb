@@ -6,6 +6,7 @@ Public Enum LocationType
     Generic
     FooMarT
     Wilderness
+    DarkAlley
 End Enum
 Public Module LocationTypeExtensions
     <Extension>

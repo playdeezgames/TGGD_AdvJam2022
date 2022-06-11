@@ -9,6 +9,7 @@ Friend Module LocationTypeDescriptorUtility
     Public ReadOnly LocationTypeDescriptors As IReadOnlyDictionary(Of LocationType, LocationTypeDescriptor) =
         New Dictionary(Of LocationType, LocationTypeDescriptor) From
         {
+            {LocationType.DarkAlley, New DarkAlleyDescriptor},
             {LocationType.FooMarT, New FooMarTLocationDescriptor},
             {LocationType.Generic, New GenericLocationDescriptor},
             {LocationType.Start, New StartLocationDescriptor},

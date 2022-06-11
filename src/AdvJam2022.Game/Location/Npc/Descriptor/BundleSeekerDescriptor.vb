@@ -3,7 +3,7 @@
 
     Public Overrides ReadOnly Property Name As String
         Get
-            Return "bundle seeker"
+            Return "Bruce"
         End Get
     End Property
 

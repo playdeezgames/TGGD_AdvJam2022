@@ -5,6 +5,7 @@ Public Enum Verb
     Forage
     Talk
     UseItem
+    AcceptQuest
 End Enum
 Public Module VerbExtensions
     <Extension>

@@ -4,10 +4,26 @@
     Function Create() As PlayerCharacter
         CreateOverworld()
         CreateFooMarT()
+        CreateDarkAlley()
         CreateWilderness()
         CreateNpcs()
         Return CreatePlayer()
     End Function
+
+    Private Sub CreateDarkAlley()
+        Dim done = False
+        While Not done
+            Dim candidate = RNG.FromEnumerable(Location.FindAll(LocationType.Generic))
+            Dim directions = CardinalDirections.Where(Function(x) Not candidate.HasRoute(x))
+            If directions.Any Then
+                Dim direction = RNG.FromEnumerable(directions)
+                Dim destination = Location.Create(LocationType.DarkAlley)
+                Route.Create(candidate, direction, destination, RouteType.AlleyWay)
+                Route.Create(destination, direction.Opposite, candidate, RouteType.AlleyWay)
+                done = True
+            End If
+        End While
+    End Sub
 
     Private Sub CreateNpcs()
         For Each entry In NpcTypeDescriptors

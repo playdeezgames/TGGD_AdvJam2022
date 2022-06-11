@@ -3,7 +3,7 @@
 
     Public Overrides ReadOnly Property Name As String
         Get
-            Return "grocer"
+            Return "Oscár"
         End Get
     End Property
 

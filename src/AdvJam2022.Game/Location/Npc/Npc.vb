@@ -32,4 +32,14 @@
     Friend Sub Destroy()
         NpcData.Clear(Id)
     End Sub
+
+    Public ReadOnly Property CanAcceptQuest(character As Character) As Boolean
+        Get
+            Return NpcType.CanAcceptQuest(character)
+        End Get
+    End Property
+
+    Friend Sub AcceptQuest(character As Character, builder As StringBuilder)
+        NpcType.AcceptQuest(character, builder)
+    End Sub
 End Class

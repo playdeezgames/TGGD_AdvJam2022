@@ -2,6 +2,7 @@
     ReadOnly table As IReadOnlyDictionary(Of Verb, Action(Of PlayerCharacter, StringBuilder)) =
         New Dictionary(Of Verb, Action(Of PlayerCharacter, StringBuilder)) From
         {
+            {Verb.AcceptQuest, AddressOf AcceptQuestProcessor.Run},
             {Verb.Forage, AddressOf ForageProcessor.Run},
             {Verb.Talk, AddressOf TalkProcessor.Run},
             {Verb.UseItem, AddressOf UseItemProcessor.Run}

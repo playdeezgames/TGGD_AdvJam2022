@@ -22,6 +22,7 @@ Public Module ItemTypeDescriptorUtility
         New Dictionary(Of ItemType, ItemTypeDescriptor) From
         {
             {ItemType.Berry, New BerryDescriptor},
+            {ItemType.Parcel, New ParcelDescriptor},
             {ItemType.PlantFiber, New PlantFiberDescriptor},
             {ItemType.Rock, New RockDescriptor},
             {ItemType.SharpRock, New SharpRockDescriptor},

@@ -5,6 +5,7 @@ Public Enum RouteType
     Road
     Door
     Path
+    AlleyWay
 End Enum
 Public Module RouteTypeExtensions
     <Extension>

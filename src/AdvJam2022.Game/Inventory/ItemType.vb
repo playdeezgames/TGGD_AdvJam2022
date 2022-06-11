@@ -14,6 +14,7 @@ Public Enum ItemType
     ThankYouNote
     ShortStick
     Berry
+    Parcel
 End Enum
 Public Module ItemTypeExtensions
     <Extension>
