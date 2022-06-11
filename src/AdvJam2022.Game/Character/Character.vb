@@ -14,6 +14,10 @@
         Return verb.CanCharacterPerform(Me)
     End Function
 
+    Function GetItem(itemType As ItemType) As Item
+        Return Inventory.ItemStacks(ItemType.CoinBag).FirstOrDefault
+    End Function
+
     Protected Shared Function CreateCharacter(characterType As CharacterType, location As Location) As Character
         Dim result = New Character(CharacterData.Create(characterType, location.Id)) With {
             .Location = location
@@ -30,7 +34,7 @@
         ChangeStatistic(StatisticType.Health, overUnder)
     End Sub
 
-    Private Sub ChangeStatistic(statisticType As StatisticType, delta As Long)
+    Public Sub ChangeStatistic(statisticType As StatisticType, delta As Long)
         SetStatistic(statisticType, GetStatistic(statisticType) + delta)
     End Sub
 
@@ -132,7 +136,17 @@
         End Get
     End Property
 
+    Public ReadOnly Property CanDeliver As Boolean
+        Get
+            Return If(Location.Npc?.CanDeliver(Me), False)
+        End Get
+    End Property
+
     Friend Function GetQuestState(questType As QuestType) As QuestState
         Return CType(If(CharacterQuestData.Read(Id, questType), 0), QuestState)
+    End Function
+
+    Friend Function HasItemType(itemType As ItemType) As Boolean
+        Return Inventory.ItemStacks.ContainsKey(itemType)
     End Function
 End Class

@@ -19,7 +19,7 @@
         End Get
     End Property
 
-    Public Overrides Sub DoTalk(player As PlayerCharacter, builder As StringBuilder)
+    Public Overrides Sub DoTalk(character As Character, builder As StringBuilder)
         builder.AppendLine($"{Name} greets you warmly.")
     End Sub
 End Class

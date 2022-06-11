@@ -19,14 +19,31 @@
         End Get
     End Property
 
-    Public Overrides Sub DoTalk(player As PlayerCharacter, builder As StringBuilder)
-        If CanAcceptQuest(player) Then
-            builder.AppendLine($"{Name} asks if you want to make some money.")
+    Public Overrides Sub DoTalk(character As Character, builder As StringBuilder)
+        Select Case character.GetQuestState(QuestType.DrugMule)
+            Case QuestState.None
+                builder.AppendLine($"{Name} asks if you want to make some money.")
+            Case QuestState.Accepted
+                builder.AppendLine($"{Name} seems a little perturbed that you aren't prioritizing his delivery mission.")
+            Case QuestState.Delivered
+                CompleteQuest(character, builder)
+            Case QuestState.Completed
+                builder.AppendLine($"{Name} doesn't have much to say to you.")
+        End Select
+    End Sub
+
+    Private Sub CompleteQuest(character As Character, builder As StringBuilder)
+        If Not character.HasItemType(ItemType.CoinBag) Then
+            builder.AppendLine($"{Name} demands his money.")
             Return
         End If
-        'TODO: make quest acceptable
-        Throw New NotImplementedException
+        character.GetItem(ItemType.CoinBag).Destroy()
+        character.ChangeStatistic(StatisticType.Money, 10)
+        character.SetQuestState(QuestType.DrugMule, QuestState.Completed)
+        builder.AppendLine($"{Name} takes 10 coins out of the coin bag and hands them to you.")
+        builder.AppendLine($"{Name} does not appear interested in further conversation.")
     End Sub
+
     Public Overrides ReadOnly Property CanAcceptQuest(character As Character) As Boolean
         Get
             Return character.GetQuestState(QuestType.DrugMule) = QuestState.None

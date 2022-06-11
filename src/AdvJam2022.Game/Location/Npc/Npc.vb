@@ -14,6 +14,10 @@
         End Get
     End Property
 
+    Friend Sub Deliver(character As Character, builder As StringBuilder)
+        NpcType.Deliver(character, builder)
+    End Sub
+
     Friend Sub Talk(player As PlayerCharacter, builder As StringBuilder)
         NpcType.DoTalk(player, builder)
     End Sub
@@ -42,4 +46,10 @@
     Friend Sub AcceptQuest(character As Character, builder As StringBuilder)
         NpcType.AcceptQuest(character, builder)
     End Sub
+
+    Friend ReadOnly Property CanDeliver(character As Character) As Boolean
+        Get
+            Return NpcType.CanDeliver(character)
+        End Get
+    End Property
 End Class

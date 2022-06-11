@@ -4,9 +4,18 @@ Public Class PlayerCharacter
         MyBase.New(CharacterData.ReadForCharacterType(CharacterType.Player).Single)
     End Sub
 
+    Public Sub Deliver(builder As StringBuilder)
+        If Not CanDeliver Then
+            builder.AppendLine("You don't have anything to deliver here.")
+            Return
+        End If
+        Location.Npc.Deliver(Me, builder)
+    End Sub
+
     Public Sub Talk(builder As StringBuilder)
         If Not Location.HasNpc Then
             builder.AppendLine("You talk to yerself, but find yerself a boring person to talk to.")
+            Return
         End If
         Location.Npc.Talk(Me, builder)
     End Sub
@@ -15,10 +24,6 @@ Public Class PlayerCharacter
         CharacterData.ClearForCharacterType(CharacterType.Player)
         Character.CreateCharacter(CharacterType.Player, location)
         Return New PlayerCharacter()
-    End Function
-
-    Friend Function HasItemType(itemType As ItemType) As Boolean
-        Return Inventory.ItemStacks.ContainsKey(itemType)
     End Function
 
     Public Sub UseItem(itemType As ItemType, builder As StringBuilder)

@@ -7,9 +7,19 @@
             Return False
         End Get
     End Property
-    MustOverride Sub DoTalk(player As PlayerCharacter, builder As StringBuilder)
+    MustOverride Sub DoTalk(character As Character, builder As StringBuilder)
 
     Overridable Sub AcceptQuest(character As Character, builder As StringBuilder)
+        builder.AppendLine("Nothing Happens!")
+    End Sub
+
+    Overridable ReadOnly Property CanDeliver(character As Character) As Boolean
+        Get
+            Return False
+        End Get
+    End Property
+
+    Overridable Sub Deliver(character As Character, builder As StringBuilder)
         builder.AppendLine("Nothing Happens!")
     End Sub
 End Class

@@ -6,6 +6,7 @@ Public Enum Verb
     Talk
     UseItem
     AcceptQuest
+    Deliver
 End Enum
 Public Module VerbExtensions
     <Extension>

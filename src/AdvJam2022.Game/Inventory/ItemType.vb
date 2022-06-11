@@ -15,6 +15,7 @@ Public Enum ItemType
     ShortStick
     Berry
     Parcel
+    CoinBag
 End Enum
 Public Module ItemTypeExtensions
     <Extension>

@@ -21,7 +21,15 @@ Public Module NpcTypeExtensions
         Return NpcTypeDescriptors(npcType).CanAcceptQuest(character)
     End Function
     <Extension>
+    Function CanDeliver(npcType As NpcType, character As Character) As Boolean
+        Return NpcTypeDescriptors(npcType).CanDeliver(character)
+    End Function
+    <Extension>
     Sub AcceptQuest(npcType As NpcType, character As Character, builder As StringBuilder)
         NpcTypeDescriptors(npcType).AcceptQuest(character, builder)
+    End Sub
+    <Extension>
+    Sub Deliver(npcType As NpcType, character As Character, builder As StringBuilder)
+        NpcTypeDescriptors(npcType).Deliver(character, builder)
     End Sub
 End Module
