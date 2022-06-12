@@ -14,7 +14,7 @@
         End Get
     End Property
 
-    Friend ReadOnly Property Prices As IReadOnlyDictionary(Of ItemType, Long)
+    Public ReadOnly Property Prices As IReadOnlyDictionary(Of ItemType, Long)
         Get
             Return NpcType.Prices
         End Get

@@ -10,7 +10,7 @@
         End Get
     End Property
 
-    Friend ReadOnly Property CanBuy() As Boolean
+    Public ReadOnly Property CanBuy() As Boolean
         Get
             Return If(Location.Npc?.CanBuyFrom(Me), False)
         End Get

@@ -24,6 +24,21 @@ Public Class PlayerCharacter
         Location.Npc.Deliver(Me, builder)
     End Sub
 
+    Public Sub Buy(itemType As ItemType, builder As StringBuilder)
+        If Not CanBuy OrElse Not Location.Npc.Prices.ContainsKey(itemType) Then
+            builder.AppendLine("You cannot buy that now!")
+            Return
+        End If
+        Dim price = Location.Npc.Prices(itemType)
+        If price > GetStatistic(StatisticType.Money) Then
+            builder.AppendLine("You don't have enough money!")
+            Return
+        End If
+        builder.AppendLine($"You buy {itemType.Name}")
+        Inventory.Add(Item.Create(itemType))
+        ChangeStatistic(StatisticType.Money, -price)
+    End Sub
+
     Public Sub Talk(builder As StringBuilder)
         If Not Location.HasNpc Then
             builder.AppendLine("You talk to yerself, but find yerself a boring person to talk to.")

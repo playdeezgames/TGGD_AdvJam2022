@@ -8,6 +8,7 @@ Public Enum Verb
     AcceptQuest
     Deliver
     Prices
+    Buy
 End Enum
 Public Module VerbExtensions
     <Extension>
