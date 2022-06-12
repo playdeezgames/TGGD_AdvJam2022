@@ -21,12 +21,10 @@
             AnsiConsole.MarkupLine($"[red]Score: 0/{MaximumScore}[/]")
             Return
         End If
-        Dim score As Long = 0
         AnsiConsole.MarkupLine("[green]Achievements:[/]")
         For Each achievement In achievements
-            score += achievement.Score
             AnsiConsole.MarkupLine($"{achievement.Name}({achievement.Score} points)")
         Next
-        AnsiConsole.MarkupLine($"[green]Score: {score}/{MaximumScore}[/]")
+        AnsiConsole.MarkupLine($"[green]Score: {player.Score}/{MaximumScore}[/]")
     End Sub
 End Module

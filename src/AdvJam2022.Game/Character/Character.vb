@@ -87,7 +87,8 @@
 
     ReadOnly Property Achievements As IEnumerable(Of AchievementType)
         Get
-            Return CharacterAchievementData.Read(Id).Select(Function(x) CType(x, AchievementType))
+            Dim temp = CharacterAchievementData.Read(Id)
+            Return temp.Select(Function(x) CType(x, AchievementType))
         End Get
     End Property
 
@@ -110,6 +111,12 @@
     ReadOnly Property IsDead As Boolean
         Get
             Return IsMinimum(StatisticType.Health)
+        End Get
+    End Property
+
+    ReadOnly Property Score As Long
+        Get
+            Return Achievements.Sum(Function(x) x.Score)
         End Get
     End Property
 

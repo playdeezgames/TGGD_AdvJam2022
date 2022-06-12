@@ -4,6 +4,8 @@ Public Enum AchievementType
     None
     RecoveredGoose
     OverworldExploration
+    Enabler
+    Cheater
 End Enum
 Public Module AchievementTypeExtensions
     <Extension>

@@ -12,12 +12,14 @@ Public Module AchievementTypeDescriptorUtility
     Friend ReadOnly AchievementTypeDescriptors As IReadOnlyDictionary(Of AchievementType, AchievementTypeDescriptor) =
         New Dictionary(Of AchievementType, AchievementTypeDescriptor) From
         {
+            {AchievementType.Cheater, New CheaterDescriptor},
+            {AchievementType.Enabler, New EnablerDescriptor},
             {AchievementType.OverworldExploration, New OverworldExplorationDescriptor},
             {AchievementType.RecoveredGoose, New RecoveredGooseDescriptor}
         }
     Public ReadOnly Property MaximumScore As Long
         Get
-            Return AchievementTypeDescriptors.Sum(Function(x) x.Value.Score)
+            Return AchievementTypeDescriptors.Where(Function(x) x.Value.Score > 0).Sum(Function(x) x.Value.Score)
         End Get
     End Property
 End Module
