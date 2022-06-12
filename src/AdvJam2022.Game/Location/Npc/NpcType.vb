@@ -32,4 +32,12 @@ Public Module NpcTypeExtensions
     Sub Deliver(npcType As NpcType, character As Character, builder As StringBuilder)
         NpcTypeDescriptors(npcType).Deliver(character, builder)
     End Sub
+    <Extension>
+    Function CanBuyFrom(npcType As NpcType, character As Character) As Boolean
+        Return NpcTypeDescriptors(npcType).CanBuyFrom(character)
+    End Function
+    <Extension>
+    Function Prices(npcType As NpcType) As IReadOnlyDictionary(Of ItemType, Long)
+        Return NpcTypeDescriptors(npcType).Prices
+    End Function
 End Module

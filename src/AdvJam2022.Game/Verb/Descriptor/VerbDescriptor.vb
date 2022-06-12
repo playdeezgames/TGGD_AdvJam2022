@@ -9,6 +9,7 @@ Friend Module VerbDescriptorUtility
             {Verb.AcceptQuest, New AcceptQuestDescriptor},
             {Verb.Deliver, New DeliverDescriptor},
             {Verb.Forage, New ForageDescriptor},
+            {Verb.Prices, New PricesDescriptor},
             {Verb.Talk, New TalkDescriptor},
             {Verb.UseItem, New UseItemDescriptor}
         }

@@ -14,9 +14,19 @@
         End Get
     End Property
 
+    Friend ReadOnly Property Prices As IReadOnlyDictionary(Of ItemType, Long)
+        Get
+            Return NpcType.Prices
+        End Get
+    End Property
+
     Friend Sub Deliver(character As Character, builder As StringBuilder)
         NpcType.Deliver(character, builder)
     End Sub
+
+    Friend Function CanBuyFrom(character As Character) As Boolean
+        Return NpcType.CanBuyFrom(character)
+    End Function
 
     Friend Sub Talk(player As PlayerCharacter, builder As StringBuilder)
         NpcType.DoTalk(player, builder)

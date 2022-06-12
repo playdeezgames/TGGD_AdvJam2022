@@ -3,7 +3,7 @@
 
     Public Overrides ReadOnly Property Name As String
         Get
-            Return "Twinkie® (in wrapper)"
+            Return "Twinkie(R) (in wrapper)"
         End Get
     End Property
 End Class

@@ -10,6 +10,12 @@
         End Get
     End Property
 
+    Friend ReadOnly Property CanBuy() As Boolean
+        Get
+            Return If(Location.Npc?.CanBuyFrom(Me), False)
+        End Get
+    End Property
+
     Function CanDoVerb(verb As Verb) As Boolean
         Return verb.CanCharacterPerform(Me)
     End Function

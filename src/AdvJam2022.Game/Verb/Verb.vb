@@ -7,6 +7,7 @@ Public Enum Verb
     UseItem
     AcceptQuest
     Deliver
+    Prices
 End Enum
 Public Module VerbExtensions
     <Extension>

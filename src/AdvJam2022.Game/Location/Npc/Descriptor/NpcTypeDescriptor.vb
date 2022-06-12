@@ -22,6 +22,16 @@
     Overridable Sub Deliver(character As Character, builder As StringBuilder)
         builder.AppendLine("Nothing Happens!")
     End Sub
+
+    Overridable Function CanBuyFrom(character As Character) As Boolean
+        Return False
+    End Function
+
+    Overridable ReadOnly Property Prices() As IReadOnlyDictionary(Of ItemType, Long)
+        Get
+            Return New Dictionary(Of ItemType, Long)
+        End Get
+    End Property
 End Class
 Friend Module NpcTypeDescriptorUtility
     Friend ReadOnly NpcTypeDescriptors As IReadOnlyDictionary(Of NpcType, NpcTypeDescriptor) =

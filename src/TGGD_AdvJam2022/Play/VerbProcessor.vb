@@ -5,6 +5,7 @@
             {Verb.AcceptQuest, AddressOf AcceptQuestProcessor.Run},
             {Verb.Deliver, AddressOf DeliverProcessor.Run},
             {Verb.Forage, AddressOf ForageProcessor.Run},
+            {Verb.Prices, AddressOf PricesProcessor.Run},
             {Verb.Talk, AddressOf TalkProcessor.Run},
             {Verb.UseItem, AddressOf UseItemProcessor.Run}
         }

@@ -9,7 +9,7 @@
             }
         AnsiConsole.Write(figlet)
         AnsiConsole.WriteLine("A production of TheGrumpyGameDev")
-        AnsiConsole.WriteLine("Twinkie® is a registered trademark of Hostess Brands, Inc.")
+        AnsiConsole.WriteLine("Twinkie(R) is a registered trademark of Hostess Brands, Inc.")
         SfxPlayer.Play(Sfx.Title)
         OkProcessor.Run()
     End Sub
