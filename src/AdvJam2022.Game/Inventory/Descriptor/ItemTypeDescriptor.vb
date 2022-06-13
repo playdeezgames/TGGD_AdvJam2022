@@ -23,6 +23,7 @@ Public Module ItemTypeDescriptorUtility
         {
             {ItemType.Berry, New BerryDescriptor},
             {ItemType.CoinBag, New CoinBagDescriptor},
+            {ItemType.Litter, New LitterDescriptor},
             {ItemType.Parcel, New ParcelDescriptor},
             {ItemType.PlantFiber, New PlantFiberDescriptor},
             {ItemType.Rock, New RockDescriptor},

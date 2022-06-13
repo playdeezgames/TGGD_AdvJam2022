@@ -16,6 +16,7 @@ Public Enum ItemType
     Berry
     Parcel
     CoinBag
+    Litter
 End Enum
 Public Module ItemTypeExtensions
     <Extension>

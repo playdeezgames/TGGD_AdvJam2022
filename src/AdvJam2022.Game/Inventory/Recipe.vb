@@ -66,6 +66,16 @@ Public Module RecipeUtility
                 {
                     {ItemType.SharpRock, 1},
                     {ItemType.ShortStick, 2}
+                }),
+            New Recipe(
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.WrappedTwinkie, 1}
+                },
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.Twinkie, 1},
+                    {ItemType.Litter, 1}
                 })
         }
 End Module
