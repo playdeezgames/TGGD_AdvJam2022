@@ -22,4 +22,10 @@
     Public Overrides Sub DoTalk(character As Character, builder As StringBuilder)
         builder.AppendLine($"{Name} greets you.")
     End Sub
+
+    Public Overrides ReadOnly Property CanGamble(character As Character) As Boolean
+        Get
+            Return character.GetStatistic(StatisticType.Money) > 0
+        End Get
+    End Property
 End Class

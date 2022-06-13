@@ -32,6 +32,12 @@
             Return New Dictionary(Of ItemType, Long)
         End Get
     End Property
+
+    Overridable ReadOnly Property CanGamble(character As Character) As Boolean
+        Get
+            Return False
+        End Get
+    End Property
 End Class
 Friend Module NpcTypeDescriptorUtility
     Friend ReadOnly NpcTypeDescriptors As IReadOnlyDictionary(Of NpcType, NpcTypeDescriptor) =

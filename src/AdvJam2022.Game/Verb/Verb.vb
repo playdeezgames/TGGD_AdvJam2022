@@ -9,6 +9,7 @@ Public Enum Verb
     Deliver
     Prices
     Buy
+    Gamble
 End Enum
 Public Module VerbExtensions
     <Extension>

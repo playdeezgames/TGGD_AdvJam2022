@@ -10,6 +10,12 @@
         End Get
     End Property
 
+    ReadOnly Property CanGamble As Boolean
+        Get
+            Return Location.CanGamble(Me)
+        End Get
+    End Property
+
     Public ReadOnly Property CanBuy() As Boolean
         Get
             Return If(Location.Npc?.CanBuyFrom(Me), False)

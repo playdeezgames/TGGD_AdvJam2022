@@ -41,4 +41,8 @@ Public Module NpcTypeExtensions
     Function Prices(npcType As NpcType) As IReadOnlyDictionary(Of ItemType, Long)
         Return NpcTypeDescriptors(npcType).Prices
     End Function
+    <Extension>
+    Function CanGamble(npcType As NpcType, character As Character) As Boolean
+        Return NpcTypeDescriptors(npcType).CanGamble(character)
+    End Function
 End Module

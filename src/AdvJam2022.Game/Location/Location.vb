@@ -16,6 +16,12 @@
         End Get
     End Property
 
+    ReadOnly Property CanGamble(character As Character) As Boolean
+        Get
+            Return If(Npc?.CanGamble(character), False)
+        End Get
+    End Property
+
     Friend Shared Function Create(locationType As LocationType) As Location
         Return New Location(LocationData.Create(locationType))
     End Function

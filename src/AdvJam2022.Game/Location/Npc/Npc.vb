@@ -62,4 +62,10 @@
             Return NpcType.CanDeliver(character)
         End Get
     End Property
+
+    Public ReadOnly Property CanGamble(character As Character) As Boolean
+        Get
+            Return NpcType.CanGamble(character)
+        End Get
+    End Property
 End Class
