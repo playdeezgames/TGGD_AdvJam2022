@@ -20,6 +20,6 @@
     End Property
 
     Public Overrides Sub DoTalk(character As Character, builder As StringBuilder)
-        Throw New NotImplementedException()
+        builder.AppendLine($"{Name} greets you.")
     End Sub
 End Class
