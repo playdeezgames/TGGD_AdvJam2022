@@ -76,6 +76,17 @@ Public Module RecipeUtility
                 {
                     {ItemType.Twinkie, 1},
                     {ItemType.Litter, 1}
+                }),
+            New Recipe(
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.Stick, 1},
+                    {ItemType.Twine, 1},
+                    {ItemType.SharpRock, 1}
+                },
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.StoneSpear, 1}
                 })
         }
 End Module

@@ -17,6 +17,7 @@ Public Enum ItemType
     Parcel
     CoinBag
     Litter
+    StoneSpear
 End Enum
 Public Module ItemTypeExtensions
     <Extension>

@@ -32,6 +32,7 @@ Public Module ItemTypeDescriptorUtility
             {ItemType.Stick, New StickDescriptor},
             {ItemType.StickBundle, New StickBundleDescriptor},
             {ItemType.StoneKnife, New StoneKnifeDescriptor},
+            {ItemType.StoneSpear, New StoneSpearDescriptor},
             {ItemType.ThankYouNote, New ThankYouNoteDescriptor},
             {ItemType.Twine, New TwineDescriptor},
             {ItemType.Twinkie, New TwinkieDescriptor},
