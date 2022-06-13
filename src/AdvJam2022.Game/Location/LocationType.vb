@@ -7,6 +7,7 @@ Public Enum LocationType
     FooMarT
     Wilderness
     DarkAlley
+    Casino
 End Enum
 Public Module LocationTypeExtensions
     <Extension>

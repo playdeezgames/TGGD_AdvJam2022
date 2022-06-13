@@ -6,6 +6,7 @@ Public Enum NpcType
     Grocer
     DrugDealer
     Junkie
+    Gambler
 End Enum
 Public Module NpcTypeExtensions
     <Extension>
