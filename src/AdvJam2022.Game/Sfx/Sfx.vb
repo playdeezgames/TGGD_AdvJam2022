@@ -1,7 +1,7 @@
 ﻿Public Enum Sfx
     Title
-    PlayerHit
-    PlayerMiss
+    GambleWin
+    GambleLose
     EnemyHit
     EnemyMiss
     BumpWall

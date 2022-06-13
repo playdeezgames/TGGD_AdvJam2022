@@ -2,6 +2,7 @@
     Friend Const AbandonGameText = "Abandon Game"
     Friend Const CraftText = "Craft..."
     Friend Const GameMenuText = "Game Menu"
+    Friend Const HeadsText = "Heads"
     Friend Const InventoryText = "Inventory"
     Friend Const LoadGameText = "Load Game..."
     Friend Const MoveText = "Move..."
@@ -12,5 +13,6 @@
     Friend Const ResumeGameText = "Resume Game"
     Friend Const SaveGameText = "Save Game..."
     Friend Const StatusText = "Status"
+    Friend Const TailsText = "Tails"
     Friend Const YesText = "Yes"
 End Module

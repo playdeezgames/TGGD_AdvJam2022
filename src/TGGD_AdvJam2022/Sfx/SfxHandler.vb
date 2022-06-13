@@ -11,9 +11,9 @@
                 PlayEnemyMiss()
             Case Sfx.HealthUp
                 PlayHealthUp()
-            Case Sfx.PlayerHit
+            Case Sfx.GambleWin
                 PlayPlayerHit()
-            Case Sfx.PlayerMiss
+            Case Sfx.GambleLose
                 PlayPlayerMiss()
             Case Sfx.Death
                 PlayDeath()

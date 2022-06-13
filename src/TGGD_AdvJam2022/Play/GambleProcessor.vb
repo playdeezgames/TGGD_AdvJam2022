@@ -1,4 +1,6 @@
-﻿Friend Module GambleProcessor
+﻿Imports SPLORR.Game
+
+Friend Module GambleProcessor
     Friend Sub Run(player As PlayerCharacter, builder As StringBuilder)
         If Not player.CanGamble Then
             builder.AppendLine("You cannot gamble now!")
@@ -11,7 +13,34 @@
                 builder.AppendLine("You decide that is it time to 'foldem'.")
                 Exit While
             End If
+            PlayRound(player, bet)
+            done = Not player.CanGamble
         End While
+    End Sub
+
+    Private ReadOnly Generator As IReadOnlyDictionary(Of String, Integer) =
+        New Dictionary(Of String, Integer) From
+        {
+            {HeadsText, 1},
+            {TailsText, 1}
+        }
+
+    Private Sub PlayRound(player As PlayerCharacter, bet As Long)
+        Dim prompt As New SelectionPrompt(Of String) With {.Title = "[olive]Heads or Tails?[/]"}
+        prompt.AddChoices(HeadsText, TailsText)
+        Dim guess = AnsiConsole.Prompt(prompt)
+        Dim flip = RNG.FromGenerator(Generator)
+        If flip = guess Then
+            AnsiConsole.MarkupLine("You win!")
+            SfxPlayer.Play(Sfx.GambleWin)
+            player.ChangeStatistic(StatisticType.Money, bet)
+        Else
+            AnsiConsole.MarkupLine("You lose!")
+            SfxPlayer.Play(Sfx.GambleLose)
+            player.ChangeStatistic(StatisticType.Money, -bet)
+        End If
+        AnsiConsole.MarkupLine($"You now have {player.GetStatistic(StatisticType.Money)} money.")
+        OkProcessor.Run()
     End Sub
 
     Private Function DetermineBet(player As PlayerCharacter) As Long
