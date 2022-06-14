@@ -8,9 +8,22 @@
         CreateWilderness()
         CreateCasino()
         CreateFishingPond()
+        CreateFishmongery()
         CreateNpcs()
         Return CreatePlayer()
     End Function
+
+    Private Sub CreateFishmongery()
+        Do
+            Dim candidate = RNG.FromEnumerable(Location.FindAll(LocationType.Generic))
+            If Not candidate.Routes.ContainsKey(Direction.Inward) Then
+                Dim destination = Location.Create(LocationType.Fishmongery)
+                Route.Create(candidate, Direction.Inward, destination, RouteType.Door)
+                Route.Create(destination, Direction.Outward, candidate, RouteType.Door)
+                Exit Do
+            End If
+        Loop
+    End Sub
 
     Private Sub CreateFishingPond()
         Dim done = False
