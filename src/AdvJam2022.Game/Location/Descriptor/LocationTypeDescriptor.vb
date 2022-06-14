@@ -11,6 +11,7 @@ Friend Module LocationTypeDescriptorUtility
         {
             {LocationType.Casino, New CasinoDescriptor},
             {LocationType.DarkAlley, New DarkAlleyDescriptor},
+            {LocationType.FishingPond, New FishingPondDescriptor},
             {LocationType.FooMarT, New FooMarTLocationDescriptor},
             {LocationType.Generic, New GenericLocationDescriptor},
             {LocationType.Start, New StartLocationDescriptor},

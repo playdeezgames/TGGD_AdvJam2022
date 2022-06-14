@@ -8,6 +8,7 @@ Public Enum LocationType
     Wilderness
     DarkAlley
     Casino
+    FishingPond
 End Enum
 Public Module LocationTypeExtensions
     <Extension>

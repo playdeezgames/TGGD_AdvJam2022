@@ -7,9 +7,25 @@
         CreateDarkAlley()
         CreateWilderness()
         CreateCasino()
+        CreateFishingPond()
         CreateNpcs()
         Return CreatePlayer()
     End Function
+
+    Private Sub CreateFishingPond()
+        Dim done = False
+        While Not done
+            Dim candidate = RNG.FromEnumerable(Location.FindAll(LocationType.Wilderness))
+            Dim directions = CardinalDirections.Where(Function(x) Not candidate.HasRoute(x))
+            If directions.Any Then
+                Dim direction = RNG.FromEnumerable(directions)
+                Dim destination = Location.Create(LocationType.FishingPond)
+                Route.Create(candidate, direction, destination, RouteType.Path)
+                Route.Create(destination, direction.Opposite, candidate, RouteType.Path)
+                done = True
+            End If
+        End While
+    End Sub
 
     Private Sub CreateCasino()
         Dim done = False
