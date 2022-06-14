@@ -2,6 +2,3 @@
 name = "play"
 path = "TGGD_AdvJam2022.exe"
 console = true
-
-[[prereqs]]
-name = "net-runtime-5-x64"
