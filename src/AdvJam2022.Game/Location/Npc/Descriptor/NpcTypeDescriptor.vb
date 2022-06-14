@@ -45,6 +45,7 @@ Friend Module NpcTypeDescriptorUtility
         {
             {NpcType.BundleSeeker, New BundleSeekerDescriptor},
             {NpcType.DrugDealer, New DrugDealerDescriptor},
+            {NpcType.Fishmonger, New FishmongerDescriptor},
             {NpcType.Gambler, New GamblerDescriptor},
             {NpcType.Grocer, New GrocerDescriptor},
             {NpcType.Junkie, New JunkieDescriptor}
