@@ -18,6 +18,7 @@ Public Enum ItemType
     CoinBag
     Litter
     StoneSpear
+    RawFish
 End Enum
 Public Module ItemTypeExtensions
     <Extension>

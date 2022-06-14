@@ -32,6 +32,7 @@ Public Module ItemTypeDescriptorUtility
             {ItemType.Litter, New LitterDescriptor},
             {ItemType.Parcel, New ParcelDescriptor},
             {ItemType.PlantFiber, New PlantFiberDescriptor},
+            {ItemType.RawFish, New RawFishDescriptor},
             {ItemType.Rock, New RockDescriptor},
             {ItemType.SharpRock, New SharpRockDescriptor},
             {ItemType.ShortStick, New ShortStickDescriptor},

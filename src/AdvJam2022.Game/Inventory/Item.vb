@@ -29,11 +29,11 @@
         End Get
     End Property
 
-    Friend Shared Function Create(itemType As ItemType) As Item
+    Public Shared Function Create(itemType As ItemType) As Item
         Return New Item(ItemData.Create(itemType))
     End Function
 
-    Friend Sub Destroy()
+    Public Sub Destroy()
         ItemData.Clear(Id)
     End Sub
 
