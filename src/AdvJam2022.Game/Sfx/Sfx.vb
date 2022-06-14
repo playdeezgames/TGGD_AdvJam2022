@@ -2,10 +2,10 @@
     Title
     GambleWin
     GambleLose
-    EnemyHit
-    EnemyMiss
+    FishingSuccess
+    BrokenSpear
     BumpWall
-    HealthUp
+    HungerUp
     Death
     RunAway
     KillEnemy

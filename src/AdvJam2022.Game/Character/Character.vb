@@ -10,6 +10,12 @@
         End Get
     End Property
 
+    ReadOnly Property CanSell As Boolean
+        Get
+            Return Location.CanSell(Me)
+        End Get
+    End Property
+
     ReadOnly Property CanFish As Boolean
         Get
             Return Location.CanFish(Me)

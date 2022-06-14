@@ -23,6 +23,10 @@
         builder.AppendLine("Nothing Happens!")
     End Sub
 
+    Overridable Function CanSell(character As Character) As Boolean
+        Return False
+    End Function
+
     Overridable Function CanBuyFrom(character As Character) As Boolean
         Return False
     End Function

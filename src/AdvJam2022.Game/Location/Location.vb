@@ -16,6 +16,10 @@
         End Get
     End Property
 
+    Friend Function CanSell(character As Character) As Boolean
+        Return If(Npc?.CanSell(character), False)
+    End Function
+
     Friend Function CanFish(character As Character) As Boolean
         Return LocationType.CanFish(character)
     End Function

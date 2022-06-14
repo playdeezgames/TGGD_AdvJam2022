@@ -18,6 +18,7 @@
         builder.AppendLine($"You use the {item.Name}.")
         builder.AppendLine($"You satiate {item.HungerBenefit} hunger.")
         item.Destroy()
+        SfxPlayer.Play(Sfx.HungerUp)
     End Sub
 
     Public Overrides ReadOnly Property HungerBenefit As Long

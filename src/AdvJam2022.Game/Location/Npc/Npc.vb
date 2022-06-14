@@ -20,6 +20,10 @@
         End Get
     End Property
 
+    Friend Function CanSell(character As Character) As Boolean
+        Return NpcType.CanSell(character)
+    End Function
+
     Friend Sub Deliver(character As Character, builder As StringBuilder)
         NpcType.Deliver(character, builder)
     End Sub

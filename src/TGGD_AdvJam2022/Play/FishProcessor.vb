@@ -26,11 +26,13 @@ Module FishProcessor
             builder.AppendLine("You catch a fish!")
             player.Inventory.Add(Item.Create(ItemType.RawFish))
             somethingHappened = True
+            SfxPlayer.Play(Sfx.FishingSuccess)
         End If
         If answer = breakSpearChoice Then
             builder.AppendLine("You break yer spear!")
             player.Inventory.ItemStacks(ItemType.StoneSpear).First.Destroy()
             somethingHappened = True
+            SfxPlayer.Play(Sfx.BrokenSpear)
         End If
         If Not somethingHappened Then
             builder.AppendLine("Better luck next time!")

@@ -5,11 +5,11 @@
                 PlayTitle()
             Case Sfx.BumpWall
                 PlayBumpWall()
-            Case Sfx.EnemyHit
+            Case Sfx.FishingSuccess
                 PlayEnemyHit()
-            Case Sfx.EnemyMiss
+            Case Sfx.BrokenSpear
                 PlayEnemyMiss()
-            Case Sfx.HealthUp
+            Case Sfx.HungerUp
                 PlayHealthUp()
             Case Sfx.GambleWin
                 PlayPlayerHit()

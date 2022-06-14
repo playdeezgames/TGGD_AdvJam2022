@@ -11,6 +11,7 @@ Public Enum Verb
     Buy
     Gamble
     Fish
+    Sell
 End Enum
 Public Module VerbExtensions
     <Extension>

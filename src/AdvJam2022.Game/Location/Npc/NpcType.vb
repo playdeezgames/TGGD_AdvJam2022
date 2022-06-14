@@ -23,6 +23,10 @@ Public Module NpcTypeExtensions
         Return NpcTypeDescriptors(npcType).CanAcceptQuest(character)
     End Function
     <Extension>
+    Function CanSell(npcType As NpcType, character As Character) As Boolean
+        Return NpcTypeDescriptors(npcType).CanSell(character)
+    End Function
+    <Extension>
     Function CanDeliver(npcType As NpcType, character As Character) As Boolean
         Return NpcTypeDescriptors(npcType).CanDeliver(character)
     End Function
