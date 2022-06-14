@@ -17,6 +17,12 @@
         End Get
     End Property
 
+    ReadOnly Property CanFish As Boolean
+        Get
+            Return ItemType.CanFish
+        End Get
+    End Property
+
     Friend ReadOnly Property HungerBenefit As Long
         Get
             Return ItemType.HungerBenefit

@@ -10,6 +10,13 @@
         End Get
     End Property
 
+    ReadOnly Property CanFish As Boolean
+        Get
+            Return Location.CanFish(Me)
+        End Get
+    End Property
+
+
     ReadOnly Property CanGamble As Boolean
         Get
             Return Location.CanGamble(Me)

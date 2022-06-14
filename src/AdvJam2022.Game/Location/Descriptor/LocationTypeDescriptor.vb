@@ -4,6 +4,10 @@
     Overridable Function GenerateForage() As IEnumerable(Of ItemType)
         Return New List(Of ItemType)
     End Function
+
+    Overridable Function CanFish(character As Character) As Boolean
+        Return False
+    End Function
 End Class
 Friend Module LocationTypeDescriptorUtility
     Public ReadOnly LocationTypeDescriptors As IReadOnlyDictionary(Of LocationType, LocationTypeDescriptor) =

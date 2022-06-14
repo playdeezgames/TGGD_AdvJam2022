@@ -16,6 +16,10 @@
         End Get
     End Property
 
+    Friend Function CanFish(character As Character) As Boolean
+        Return LocationType.CanFish(character)
+    End Function
+
     ReadOnly Property CanGamble(character As Character) As Boolean
         Get
             Return If(Npc?.CanGamble(character), False)

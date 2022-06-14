@@ -6,4 +6,9 @@
             Return "stone spear"
         End Get
     End Property
+    Public Overrides ReadOnly Property CanFish As Boolean
+        Get
+            Return True
+        End Get
+    End Property
 End Class

@@ -36,4 +36,8 @@ Public Module ItemTypeExtensions
     Function HungerBenefit(itemType As ItemType) As Long
         Return ItemTypeDescriptors(itemType).HungerBenefit
     End Function
+    <Extension>
+    Function CanFish(itemType As ItemType) As Boolean
+        Return ItemTypeDescriptors(itemType).CanFish
+    End Function
 End Module

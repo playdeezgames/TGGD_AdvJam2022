@@ -16,6 +16,12 @@
             Return 0
         End Get
     End Property
+
+    Overridable ReadOnly Property CanFish As Boolean
+        Get
+            Return False
+        End Get
+    End Property
 End Class
 Public Module ItemTypeDescriptorUtility
     Friend ReadOnly ItemTypeDescriptors As IReadOnlyDictionary(Of ItemType, ItemTypeDescriptor) =
