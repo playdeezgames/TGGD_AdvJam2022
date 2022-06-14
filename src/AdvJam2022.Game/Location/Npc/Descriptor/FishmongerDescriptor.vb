@@ -22,4 +22,17 @@
     Public Overrides Sub DoTalk(character As Character, builder As StringBuilder)
         builder.AppendLine($"{Name} tells you that he buys raw fish.")
     End Sub
+
+    Public Overrides Function CanSell(character As Character) As Boolean
+        Return Offers.Any(Function(x) character.HasItemType(x.Key))
+    End Function
+
+    Public Overrides ReadOnly Property Offers As IReadOnlyDictionary(Of ItemType, Long)
+        Get
+            Return New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.RawFish, 15}
+                }
+        End Get
+    End Property
 End Class

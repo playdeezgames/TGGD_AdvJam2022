@@ -4,6 +4,18 @@ Public Class PlayerCharacter
         MyBase.New(CharacterData.ReadForCharacterType(CharacterType.Player).Single)
     End Sub
 
+    Public Sub GetOfferList(builder As StringBuilder)
+        If Not CanSell Then
+            builder.AppendLine("There is nothing to sell.")
+            Return
+        End If
+        Dim offers = Location.Npc.Offers
+        builder.AppendLine($"{Location.Npc.Name} has the following offers:")
+        For Each offer In offers
+            builder.AppendLine($"-{offer.Key.Name}: {offer.Value} money")
+        Next
+    End Sub
+
     Public Sub GetPriceList(builder As StringBuilder)
         If Not CanBuy Then
             builder.AppendLine("There is nothing to buy.")

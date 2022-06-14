@@ -8,7 +8,9 @@
             {Verb.Fish, AddressOf FishProcessor.Run},
             {Verb.Forage, AddressOf ForageProcessor.Run},
             {Verb.Gamble, AddressOf GambleProcessor.Run},
+            {Verb.Offers, AddressOf OffersProcessor.Run},
             {Verb.Prices, AddressOf PricesProcessor.Run},
+            {Verb.Sell, AddressOf SellProcessor.Run},
             {Verb.Talk, AddressOf TalkProcessor.Run},
             {Verb.UseItem, AddressOf UseItemProcessor.Run}
         }

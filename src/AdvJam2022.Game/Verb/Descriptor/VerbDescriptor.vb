@@ -12,6 +12,7 @@ Friend Module VerbDescriptorUtility
             {Verb.Fish, New FishVerbDescriptor},
             {Verb.Forage, New ForageDescriptor},
             {Verb.Gamble, New GambleDescriptor},
+            {Verb.Offers, New OffersDescriptor},
             {Verb.Prices, New PricesDescriptor},
             {Verb.Sell, New SellDescriptor},
             {Verb.Talk, New TalkDescriptor},

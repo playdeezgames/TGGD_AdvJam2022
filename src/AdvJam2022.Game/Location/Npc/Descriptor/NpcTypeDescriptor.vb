@@ -37,6 +37,12 @@
         End Get
     End Property
 
+    Overridable ReadOnly Property Offers() As IReadOnlyDictionary(Of ItemType, Long)
+        Get
+            Return New Dictionary(Of ItemType, Long)
+        End Get
+    End Property
+
     Overridable ReadOnly Property CanGamble(character As Character) As Boolean
         Get
             Return False

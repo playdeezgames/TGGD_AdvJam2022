@@ -20,6 +20,12 @@
         End Get
     End Property
 
+    Public ReadOnly Property Offers As IReadOnlyDictionary(Of ItemType, Long)
+        Get
+            Return NpcType.Offers
+        End Get
+    End Property
+
     Friend Function CanSell(character As Character) As Boolean
         Return NpcType.CanSell(character)
     End Function
