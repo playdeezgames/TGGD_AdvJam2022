@@ -13,6 +13,7 @@ Public Enum Verb
     Fish
     Sell
     Offers
+    ChopWood
 End Enum
 Public Module VerbExtensions
     <Extension>

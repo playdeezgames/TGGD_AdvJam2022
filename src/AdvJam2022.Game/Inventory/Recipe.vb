@@ -87,6 +87,16 @@ Public Module RecipeUtility
                 New Dictionary(Of ItemType, Long) From
                 {
                     {ItemType.StoneSpear, 1}
+                }),
+            New Recipe(
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.DullAxe, 1},
+                    {ItemType.Rock, 1}
+                },
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.Axe, 1}
                 })
         }
 End Module

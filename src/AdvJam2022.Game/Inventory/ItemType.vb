@@ -21,6 +21,8 @@ Public Enum ItemType
     RawFish
     Axe
     Cheese
+    FireWood
+    DullAxe
 End Enum
 Public Module ItemTypeExtensions
     <Extension>

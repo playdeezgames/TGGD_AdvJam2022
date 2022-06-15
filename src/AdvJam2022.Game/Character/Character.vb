@@ -16,6 +16,12 @@
         End Get
     End Property
 
+    ReadOnly Property CanChopWood() As Boolean
+        Get
+            Return Location.CanChopWood(Me)
+        End Get
+    End Property
+
     ReadOnly Property CanFish As Boolean
         Get
             Return Location.CanFish(Me)

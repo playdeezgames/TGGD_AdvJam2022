@@ -31,6 +31,8 @@ Public Module ItemTypeDescriptorUtility
             {ItemType.Berry, New BerryDescriptor},
             {ItemType.Cheese, New CheeseDescriptor},
             {ItemType.CoinBag, New CoinBagDescriptor},
+            {ItemType.DullAxe, New DullAxeDescriptor},
+            {ItemType.FireWood, New FireWoodDescriptor},
             {ItemType.Litter, New LitterDescriptor},
             {ItemType.Parcel, New ParcelDescriptor},
             {ItemType.PlantFiber, New PlantFiberDescriptor},
