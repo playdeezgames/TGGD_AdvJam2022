@@ -39,6 +39,7 @@ Public Module ItemTypeDescriptorUtility
             {ItemType.Parcel, New ParcelDescriptor},
             {ItemType.PlantFiber, New PlantFiberDescriptor},
             {ItemType.RawFish, New RawFishDescriptor},
+            {ItemType.RawFishOnAStick, New RawFishOnAStickDescriptor},
             {ItemType.Rock, New RockDescriptor},
             {ItemType.SharpRock, New SharpRockDescriptor},
             {ItemType.ShortStick, New ShortStickDescriptor},
@@ -49,6 +50,7 @@ Public Module ItemTypeDescriptorUtility
             {ItemType.ThankYouNote, New ThankYouNoteDescriptor},
             {ItemType.Twine, New TwineDescriptor},
             {ItemType.Twinkie, New TwinkieDescriptor},
+            {ItemType.TwinkieOnAStick, New TwinkieOnAStickDescriptor},
             {ItemType.WrappedTwinkie, New WrappedTwinkieDescriptor}
         }
     Friend ReadOnly Property AllItemTypes As IEnumerable(Of ItemType)

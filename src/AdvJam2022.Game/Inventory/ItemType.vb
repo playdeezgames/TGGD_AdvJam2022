@@ -25,6 +25,8 @@ Public Enum ItemType
     DullAxe
     Firedrill
     Firebow
+    RawFishOnAStick
+    TwinkieOnAStick
 End Enum
 Public Module ItemTypeExtensions
     <Extension>

@@ -117,6 +117,46 @@ Public Module RecipeUtility
                 New Dictionary(Of ItemType, Long) From
                 {
                     {ItemType.Firedrill, 1}
+                }),
+            New Recipe(
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.Twinkie, 1},
+                    {ItemType.Stick, 1}
+                },
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.TwinkieOnAStick, 1}
+                }),
+            New Recipe(
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.RawFish, 1},
+                    {ItemType.Stick, 1}
+                },
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.RawFishOnAStick, 1}
+                }),
+            New Recipe(
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.TwinkieOnAStick, 1}
+                },
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.Twinkie, 1},
+                    {ItemType.Stick, 1}
+                }),
+            New Recipe(
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.RawFishOnAStick, 1}
+                },
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.RawFish, 1},
+                    {ItemType.Stick, 1}
                 })
         }
 End Module
