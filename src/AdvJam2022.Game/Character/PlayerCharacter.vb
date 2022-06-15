@@ -36,6 +36,21 @@ Public Class PlayerCharacter
         Location.Npc.Deliver(Me, builder)
     End Sub
 
+    Public Sub Sell(itemType As ItemType, builder As StringBuilder)
+        If Not CanSell OrElse Not Location.Npc.Offers.ContainsKey(itemType) Then
+            builder.AppendLine("You cannot sell that now!")
+            Return
+        End If
+        If Not HasItemType(itemType) Then
+            builder.AppendLine("You don't have any!")
+            Return
+        End If
+        Dim offer = Location.Npc.Offers(itemType)
+        builder.AppendLine($"You sell {itemType.Name} for {offer} money.")
+        ChangeStatistic(StatisticType.Money, offer)
+        Inventory.ItemStacks(itemType).First.Destroy()
+    End Sub
+
     Public Sub Buy(itemType As ItemType, builder As StringBuilder)
         If Not CanBuy OrElse Not Location.Npc.Prices.ContainsKey(itemType) Then
             builder.AppendLine("You cannot buy that now!")

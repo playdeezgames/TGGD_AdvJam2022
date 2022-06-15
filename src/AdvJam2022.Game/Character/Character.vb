@@ -178,7 +178,7 @@
         Return CType(If(CharacterQuestData.Read(Id, questType), 0), QuestState)
     End Function
 
-    Friend Function HasItemType(itemType As ItemType) As Boolean
+    Function HasItemType(itemType As ItemType) As Boolean
         Return Inventory.ItemStacks.ContainsKey(itemType)
     End Function
 End Class
