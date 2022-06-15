@@ -27,7 +27,9 @@ Public Module ItemTypeDescriptorUtility
     Friend ReadOnly ItemTypeDescriptors As IReadOnlyDictionary(Of ItemType, ItemTypeDescriptor) =
         New Dictionary(Of ItemType, ItemTypeDescriptor) From
         {
+            {ItemType.Axe, New AxeDescriptor},
             {ItemType.Berry, New BerryDescriptor},
+            {ItemType.Cheese, New CheeseDescriptor},
             {ItemType.CoinBag, New CoinBagDescriptor},
             {ItemType.Litter, New LitterDescriptor},
             {ItemType.Parcel, New ParcelDescriptor},

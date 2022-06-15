@@ -19,6 +19,8 @@ Public Enum ItemType
     Litter
     StoneSpear
     RawFish
+    Axe
+    Cheese
 End Enum
 Public Module ItemTypeExtensions
     <Extension>
