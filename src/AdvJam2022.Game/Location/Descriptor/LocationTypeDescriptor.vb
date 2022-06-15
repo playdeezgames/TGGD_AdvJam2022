@@ -19,6 +19,7 @@ Friend Module LocationTypeDescriptorUtility
             {LocationType.Fishmongery, New FishmongeryDescriptor},
             {LocationType.FooMarT, New FooMarTLocationDescriptor},
             {LocationType.Generic, New GenericLocationDescriptor},
+            {LocationType.HardwareStore, New HardwareStoreDescriptor},
             {LocationType.Start, New StartLocationDescriptor},
             {LocationType.Wilderness, New WildernessLocationDescriptor}
         }

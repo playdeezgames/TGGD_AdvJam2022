@@ -10,6 +10,7 @@ Public Enum LocationType
     Casino
     FishingPond
     Fishmongery
+    HardwareStore
 End Enum
 Public Module LocationTypeExtensions
     <Extension>
