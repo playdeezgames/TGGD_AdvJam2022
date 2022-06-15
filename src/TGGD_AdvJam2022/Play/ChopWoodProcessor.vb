@@ -12,7 +12,7 @@ Friend Module ChopWoodProcessor
             builder.AppendLine("You cannot chop wood now.")
             Return
         End If
-        player.ChangeStatistic(StatisticType.Hunger, -5)
+        player.ChangeHunger(-5)
         player.Inventory.Add(Item.Create(ItemType.FireWood))
         builder.AppendLine($"+1 {ItemType.FireWood.Name}")
         If RNG.FromGenerator(AxeDullageGenerator) Then

@@ -3,6 +3,7 @@
         New Dictionary(Of Verb, Action(Of PlayerCharacter, StringBuilder)) From
         {
             {Verb.AcceptQuest, AddressOf AcceptQuestProcessor.Run},
+            {Verb.BuildFire, AddressOf BuildFireProcessor.Run},
             {Verb.Buy, AddressOf BuyProcessor.Run},
             {Verb.ChopWood, AddressOf ChopWoodProcessor.Run},
             {Verb.Deliver, AddressOf DeliverProcessor.Run},

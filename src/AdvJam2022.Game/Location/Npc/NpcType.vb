@@ -9,6 +9,7 @@ Public Enum NpcType
     Gambler
     Fishmonger
     HardwareStoreGuy
+    Fire
 End Enum
 Public Module NpcTypeExtensions
     <Extension>

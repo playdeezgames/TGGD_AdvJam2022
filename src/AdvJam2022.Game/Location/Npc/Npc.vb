@@ -49,7 +49,7 @@
         Return Nothing
     End Function
 
-    Friend Shared Function Create(location As Location, npcType As NpcType) As Npc
+    Shared Function Create(location As Location, npcType As NpcType) As Npc
         Return FromId(NpcData.Create(location.Id, npcType))
     End Function
 

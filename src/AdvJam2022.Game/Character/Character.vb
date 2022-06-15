@@ -16,9 +16,11 @@
         End Get
     End Property
 
-    Friend Function CanBuildFire() As Boolean
-        Return Location.CanBuildFire(Me)
-    End Function
+    ReadOnly Property CanBuildFire() As Boolean
+        Get
+            Return Location.CanBuildFire(Me)
+        End Get
+    End Property
 
     ReadOnly Property CanChopWood() As Boolean
         Get
@@ -64,7 +66,7 @@
         Return result
     End Function
 
-    Friend Sub ChangeHunger(delta As Long)
+    Public Sub ChangeHunger(delta As Long)
         Dim anticipatedHunger = GetStatistic(StatisticType.Hunger) + delta
         SetStatistic(StatisticType.Hunger, anticipatedHunger)
         Dim updatedHunger = GetStatistic(StatisticType.Hunger)
