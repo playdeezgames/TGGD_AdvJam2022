@@ -58,6 +58,7 @@ Friend Module NpcTypeDescriptorUtility
             {NpcType.Fishmonger, New FishmongerDescriptor},
             {NpcType.Gambler, New GamblerDescriptor},
             {NpcType.Grocer, New GrocerDescriptor},
+            {NpcType.HardwareStoreGuy, New HardwareStoreGuyDescriptor},
             {NpcType.Junkie, New JunkieDescriptor}
         }
 End Module

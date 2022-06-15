@@ -8,6 +8,7 @@ Public Enum NpcType
     Junkie
     Gambler
     Fishmonger
+    HardwareStoreGuy
 End Enum
 Public Module NpcTypeExtensions
     <Extension>
