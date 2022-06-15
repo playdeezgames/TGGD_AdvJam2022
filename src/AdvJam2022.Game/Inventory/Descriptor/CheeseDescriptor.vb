@@ -3,7 +3,7 @@
 
     Public Overrides ReadOnly Property Name As String
         Get
-            Return "cheese wedge"
+            Return "aged brie"
         End Get
     End Property
 End Class
