@@ -20,6 +20,13 @@
         Return If(Npc?.CanSell(character), False)
     End Function
 
+    Friend Function CanBuildFire(character As Character) As Boolean
+        If Npc IsNot Nothing Then
+            Return False
+        End If
+        Return LocationType.CanBuildFire(character)
+    End Function
+
     Friend Function CanChopWood(character As Character) As Boolean
         Return LocationType.CanChopWood(character)
     End Function

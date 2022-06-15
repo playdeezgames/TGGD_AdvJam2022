@@ -49,7 +49,7 @@
         End If
     End Sub
 
-    Private Function ItemCount(itemType As ItemType) As Long
+    Public Function ItemCount(itemType As ItemType) As Long
         Dim itemStacks = Me.ItemStacks.Where(Function(x) x.Key = itemType)
         If Not itemStacks.Any Then
             Return 0

@@ -7,6 +7,7 @@ Friend Module VerbDescriptorUtility
         New Dictionary(Of Verb, VerbDescriptor) From
         {
             {Verb.AcceptQuest, New AcceptQuestDescriptor},
+            {Verb.BuildFire, New BuildFireDescriptor},
             {Verb.Buy, New BuyDescriptor},
             {Verb.ChopWood, New ChopWoodDescriptor},
             {Verb.Deliver, New DeliverDescriptor},

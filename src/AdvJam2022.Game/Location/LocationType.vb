@@ -22,6 +22,10 @@ Public Module LocationTypeExtensions
         Return LocationTypeDescriptors(locationType).CanFish(character)
     End Function
     <Extension>
+    Function CanBuildFire(locationType As LocationType, character As Character) As Boolean
+        Return LocationTypeDescriptors(locationType).CanBuildFire(character)
+    End Function
+    <Extension>
     Function CanChopWood(locationType As LocationType, character As Character) As Boolean
         Return LocationTypeDescriptors(locationType).CanChopWood(character)
     End Function

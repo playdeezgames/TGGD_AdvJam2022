@@ -14,6 +14,7 @@ Public Enum Verb
     Sell
     Offers
     ChopWood
+    BuildFire
 End Enum
 Public Module VerbExtensions
     <Extension>

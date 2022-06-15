@@ -16,6 +16,10 @@
         End Get
     End Property
 
+    Friend Function CanBuildFire() As Boolean
+        Return Location.CanBuildFire(Me)
+    End Function
+
     ReadOnly Property CanChopWood() As Boolean
         Get
             Return Location.CanChopWood(Me)
@@ -40,6 +44,10 @@
             Return If(Location.Npc?.CanBuyFrom(Me), False)
         End Get
     End Property
+
+    Friend Function HasItemTypeCount(itemType As ItemType, itemCount As Integer) As Boolean
+        Return Inventory.ItemCount(itemType) >= itemCount
+    End Function
 
     Function CanDoVerb(verb As Verb) As Boolean
         Return verb.CanCharacterPerform(Me)
