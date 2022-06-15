@@ -32,6 +32,8 @@ Public Module ItemTypeDescriptorUtility
             {ItemType.Cheese, New CheeseDescriptor},
             {ItemType.CoinBag, New CoinBagDescriptor},
             {ItemType.DullAxe, New DullAxeDescriptor},
+            {ItemType.Firebow, New FirebowDescriptor},
+            {ItemType.Firedrill, New FiredrillDescriptor},
             {ItemType.FireWood, New FireWoodDescriptor},
             {ItemType.Litter, New LitterDescriptor},
             {ItemType.Parcel, New ParcelDescriptor},

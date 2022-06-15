@@ -23,6 +23,8 @@ Public Enum ItemType
     Cheese
     FireWood
     DullAxe
+    Firedrill
+    Firebow
 End Enum
 Public Module ItemTypeExtensions
     <Extension>
