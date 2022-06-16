@@ -28,6 +28,12 @@
             Return False
         End Get
     End Property
+
+    Overridable ReadOnly Property CookingResult As ItemType?
+        Get
+            Return Nothing
+        End Get
+    End Property
 End Class
 Public Module ItemTypeDescriptorUtility
     Friend ReadOnly ItemTypeDescriptors As IReadOnlyDictionary(Of ItemType, ItemTypeDescriptor) =
@@ -46,6 +52,10 @@ Public Module ItemTypeDescriptorUtility
             {ItemType.PlantFiber, New PlantFiberDescriptor},
             {ItemType.RawFish, New RawFishDescriptor},
             {ItemType.RawFishOnAStick, New RawFishOnAStickDescriptor},
+            {ItemType.RoastedFish, New RoastedFishDescriptor},
+            {ItemType.RoastedFishOnAStick, New RoastedFishOnAStickDescriptor},
+            {ItemType.RoastedTwinkie, New RoastedTwinkieDescriptor},
+            {ItemType.RoastedTwinkieOnAStick, New RoastedTwinkieOnAStickDescriptor},
             {ItemType.Rock, New RockDescriptor},
             {ItemType.SharpRock, New SharpRockDescriptor},
             {ItemType.ShortStick, New ShortStickDescriptor},

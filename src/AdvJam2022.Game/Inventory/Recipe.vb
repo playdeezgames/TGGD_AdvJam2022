@@ -157,6 +157,26 @@ Public Module RecipeUtility
                 {
                     {ItemType.RawFish, 1},
                     {ItemType.Stick, 1}
+                }),
+            New Recipe(
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.RoastedTwinkieOnAStick, 1}
+                },
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.RoastedTwinkie, 1},
+                    {ItemType.Stick, 1}
+                }),
+            New Recipe(
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.RoastedFishOnAStick, 1}
+                },
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.RoastedFish, 1},
+                    {ItemType.Stick, 1}
                 })
         }
 End Module

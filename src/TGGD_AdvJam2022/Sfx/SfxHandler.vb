@@ -3,7 +3,7 @@
         Select Case sfx
             Case Sfx.Title
                 PlayTitle()
-            Case Sfx.BumpWall
+            Case Sfx.AteCheese
                 PlayBumpWall()
             Case Sfx.FishingSuccess
                 PlayEnemyHit()
@@ -19,7 +19,7 @@
                 PlayDeath()
             Case Sfx.RunAway
                 PlayRunAway()
-            Case Sfx.KillEnemy
+            Case Sfx.Achievement
                 PlayKillEnemy()
             Case Sfx.Win
                 PlayWin()

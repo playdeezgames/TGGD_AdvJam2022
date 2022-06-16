@@ -12,6 +12,7 @@ Public Module AchievementTypeDescriptorUtility
     Friend ReadOnly AchievementTypeDescriptors As IReadOnlyDictionary(Of AchievementType, AchievementTypeDescriptor) =
         New Dictionary(Of AchievementType, AchievementTypeDescriptor) From
         {
+            {AchievementType.AteRoastedTwinkie, New AteRoastedTwinkieDescriptor},
             {AchievementType.Cheater, New CheaterDescriptor},
             {AchievementType.Enabler, New EnablerDescriptor},
             {AchievementType.OverworldExploration, New OverworldExplorationDescriptor},

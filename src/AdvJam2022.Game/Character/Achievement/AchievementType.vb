@@ -6,6 +6,7 @@ Public Enum AchievementType
     OverworldExploration
     Enabler
     Cheater
+    AteRoastedTwinkie
 End Enum
 Public Module AchievementTypeExtensions
     <Extension>

@@ -4,10 +4,10 @@
     GambleLose
     FishingSuccess
     BrokenSpear
-    BumpWall
+    AteCheese
     HungerUp
     Death
     RunAway
-    KillEnemy
+    Achievement
     Win
 End Enum

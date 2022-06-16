@@ -27,6 +27,10 @@ Public Enum ItemType
     Firebow
     RawFishOnAStick
     TwinkieOnAStick
+    RoastedFishOnAStick
+    RoastedTwinkieOnAStick
+    RoastedFish
+    RoastedTwinkie
 End Enum
 Public Module ItemTypeExtensions
     <Extension>
@@ -52,5 +56,9 @@ Public Module ItemTypeExtensions
     <Extension>
     Function CanCook(itemType As ItemType) As Boolean
         Return ItemTypeDescriptors(itemType).CanCook
+    End Function
+    <Extension>
+    Function CookingResult(itemType As ItemType) As ItemType?
+        Return ItemTypeDescriptors(itemType).CookingResult
     End Function
 End Module
