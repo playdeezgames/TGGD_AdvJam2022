@@ -36,6 +36,9 @@ Module FishProcessor
         End If
         If Not somethingHappened Then
             builder.AppendLine("Better luck next time!")
+            player.ChangeHunger(-1)
+            Return
         End If
+        player.ChangeHunger(-2)
     End Sub
 End Module
