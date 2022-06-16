@@ -16,6 +16,12 @@
         End Get
     End Property
 
+    ReadOnly Property CanCook(character As Character) As Boolean
+        Get
+            Return If(Npc?.CanCook(character), False)
+        End Get
+    End Property
+
     Friend Function CanSell(character As Character) As Boolean
         Return If(Npc?.CanSell(character), False)
     End Function

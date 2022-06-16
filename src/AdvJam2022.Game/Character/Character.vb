@@ -10,6 +10,12 @@
         End Get
     End Property
 
+    ReadOnly Property CanCook() As Boolean
+        Get
+            Return Location.CanCook(Me)
+        End Get
+    End Property
+
     ReadOnly Property CanSell As Boolean
         Get
             Return Location.CanSell(Me)

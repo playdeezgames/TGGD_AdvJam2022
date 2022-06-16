@@ -15,6 +15,7 @@ Public Enum Verb
     Offers
     ChopWood
     BuildFire
+    Cook
 End Enum
 Public Module VerbExtensions
     <Extension>

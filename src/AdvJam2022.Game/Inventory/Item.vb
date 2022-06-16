@@ -17,6 +17,12 @@
         End Get
     End Property
 
+    ReadOnly Property CanCook() As Boolean
+        Get
+            Return ItemType.CanCook
+        End Get
+    End Property
+
     ReadOnly Property CanFish As Boolean
         Get
             Return ItemType.CanFish

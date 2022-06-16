@@ -10,6 +10,7 @@ Friend Module VerbDescriptorUtility
             {Verb.BuildFire, New BuildFireDescriptor},
             {Verb.Buy, New BuyDescriptor},
             {Verb.ChopWood, New ChopWoodDescriptor},
+            {Verb.Cook, New CookDescriptor},
             {Verb.Deliver, New DeliverDescriptor},
             {Verb.Fish, New FishVerbDescriptor},
             {Verb.Forage, New ForageDescriptor},

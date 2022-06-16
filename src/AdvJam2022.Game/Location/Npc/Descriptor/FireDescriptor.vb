@@ -22,4 +22,10 @@
     Public Overrides Sub DoTalk(character As Character, builder As StringBuilder)
         builder.AppendLine($"{Name} is not a good conversationalist (you thought the Axe was dull....)")
     End Sub
+
+    Public Overrides ReadOnly Property CanCook(character As Character) As Boolean
+        Get
+            Return character.Inventory.Items.Any(Function(x) x.CanCook)
+        End Get
+    End Property
 End Class

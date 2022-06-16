@@ -49,4 +49,8 @@ Public Module ItemTypeExtensions
     Function CanFish(itemType As ItemType) As Boolean
         Return ItemTypeDescriptors(itemType).CanFish
     End Function
+    <Extension>
+    Function CanCook(itemType As ItemType) As Boolean
+        Return ItemTypeDescriptors(itemType).CanCook
+    End Function
 End Module

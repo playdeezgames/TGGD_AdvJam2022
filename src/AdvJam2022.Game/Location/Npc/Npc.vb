@@ -20,6 +20,12 @@
         End Get
     End Property
 
+    ReadOnly Property CanCook(character As Character) As Boolean
+        Get
+            Return NpcType.CanCook(character)
+        End Get
+    End Property
+
     Public ReadOnly Property Offers As IReadOnlyDictionary(Of ItemType, Long)
         Get
             Return NpcType.Offers

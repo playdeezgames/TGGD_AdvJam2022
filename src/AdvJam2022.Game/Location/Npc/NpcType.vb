@@ -56,4 +56,8 @@ Public Module NpcTypeExtensions
     Function CanGamble(npcType As NpcType, character As Character) As Boolean
         Return NpcTypeDescriptors(npcType).CanGamble(character)
     End Function
+    <Extension>
+    Function CanCook(npcType As NpcType, character As Character) As Boolean
+        Return NpcTypeDescriptors(npcType).CanCook(character)
+    End Function
 End Module

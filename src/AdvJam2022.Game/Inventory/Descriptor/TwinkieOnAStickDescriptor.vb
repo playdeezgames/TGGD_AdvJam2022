@@ -6,4 +6,10 @@
             Return "Twinkie(R) on a stick"
         End Get
     End Property
+
+    Public Overrides ReadOnly Property CanCook As Boolean
+        Get
+            Return True
+        End Get
+    End Property
 End Class
