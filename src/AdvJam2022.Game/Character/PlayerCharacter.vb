@@ -16,6 +16,27 @@ Public Class PlayerCharacter
         Next
     End Sub
 
+    Private ReadOnly StartFireGenerator As IReadOnlyDictionary(Of Boolean, Integer) = RNG.MakeBooleanGenerator(1, 1)
+
+    Public Sub StartFire(builder As StringBuilder)
+        If Not CanBuildFire Then
+            builder.AppendLine("You cannot build a fire now.")
+            Return
+        End If
+        ChangeHunger(-5)
+        Inventory.ItemStacks(ItemType.PlantFiber).First.Destroy()
+        If Not RNG.FromGenerator(StartFireGenerator) Then
+            builder.AppendLine("You fail to start the fire.")
+            Return
+        End If
+        Dim items = Inventory.ItemStacks(ItemType.FireWood).Take(5)
+        For Each item In items
+            item.Destroy()
+        Next
+        Npc.Create(Location, NpcType.Fire)
+        builder.AppendLine("You start a fire.")
+    End Sub
+
     Public Sub GetPriceList(builder As StringBuilder)
         If Not CanBuy Then
             builder.AppendLine("There is nothing to buy.")
