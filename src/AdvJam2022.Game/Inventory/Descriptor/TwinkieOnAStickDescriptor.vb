@@ -12,4 +12,10 @@
             Return True
         End Get
     End Property
+
+    Public Overrides ReadOnly Property CookingResult As ItemType?
+        Get
+            Return ItemType.RoastedTwinkieOnAStick
+        End Get
+    End Property
 End Class
