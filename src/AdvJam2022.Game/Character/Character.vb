@@ -21,7 +21,7 @@
     End Function
 
     Function GetItem(itemType As ItemType) As Item
-        Return Inventory.ItemStacks(ItemType.CoinBag).FirstOrDefault
+        Return Inventory.ItemStacks(itemType).FirstOrDefault
     End Function
 
     Protected Shared Function CreateCharacter(characterType As CharacterType, location As Location) As Character
