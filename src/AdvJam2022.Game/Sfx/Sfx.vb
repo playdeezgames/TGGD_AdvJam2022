@@ -1,13 +1,13 @@
 ﻿Public Enum Sfx
     Title
-    PlayerHit
-    PlayerMiss
-    EnemyHit
-    EnemyMiss
-    BumpWall
-    HealthUp
+    GambleWin
+    GambleLose
+    FishingSuccess
+    BrokenSpear
+    AteCheese
+    HungerUp
     Death
     RunAway
-    KillEnemy
+    Achievement
     Win
 End Enum

@@ -58,14 +58,19 @@ Module InPlayProcessor
     End Sub
 
     Private Sub UpdateAchievements(player As PlayerCharacter)
+        Dim achieved = False
         For Each achievement In AllAchievements
             If Not player.HasAchievement(achievement) Then
                 player.CheckAchievement(achievement)
                 If player.HasAchievement(achievement) Then
+                    achieved = True
                     AnsiConsole.MarkupLine($"[green]You have achieved {achievement.Name}![/]")
                 End If
             End If
         Next
+        If achieved Then
+            SfxPlayer.Play(Sfx.Achievement)
+        End If
     End Sub
 
     Private Sub DisplayExits(player As PlayerCharacter)

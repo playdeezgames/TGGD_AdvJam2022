@@ -23,6 +23,10 @@
         builder.AppendLine("Nothing Happens!")
     End Sub
 
+    Overridable Function CanSell(character As Character) As Boolean
+        Return False
+    End Function
+
     Overridable Function CanBuyFrom(character As Character) As Boolean
         Return False
     End Function
@@ -32,6 +36,24 @@
             Return New Dictionary(Of ItemType, Long)
         End Get
     End Property
+
+    Overridable ReadOnly Property Offers() As IReadOnlyDictionary(Of ItemType, Long)
+        Get
+            Return New Dictionary(Of ItemType, Long)
+        End Get
+    End Property
+
+    Overridable ReadOnly Property CanGamble(character As Character) As Boolean
+        Get
+            Return False
+        End Get
+    End Property
+
+    Overridable ReadOnly Property CanCook(character As Character) As Boolean
+        Get
+            Return False
+        End Get
+    End Property
 End Class
 Friend Module NpcTypeDescriptorUtility
     Friend ReadOnly NpcTypeDescriptors As IReadOnlyDictionary(Of NpcType, NpcTypeDescriptor) =
@@ -39,7 +61,11 @@ Friend Module NpcTypeDescriptorUtility
         {
             {NpcType.BundleSeeker, New BundleSeekerDescriptor},
             {NpcType.DrugDealer, New DrugDealerDescriptor},
+            {NpcType.Fire, New FireDescriptor},
+            {NpcType.Fishmonger, New FishmongerDescriptor},
+            {NpcType.Gambler, New GamblerDescriptor},
             {NpcType.Grocer, New GrocerDescriptor},
+            {NpcType.HardwareStoreGuy, New HardwareStoreGuyDescriptor},
             {NpcType.Junkie, New JunkieDescriptor}
         }
 End Module

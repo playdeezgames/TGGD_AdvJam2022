@@ -9,6 +9,13 @@ Public Enum Verb
     Deliver
     Prices
     Buy
+    Gamble
+    Fish
+    Sell
+    Offers
+    ChopWood
+    BuildFire
+    Cook
 End Enum
 Public Module VerbExtensions
     <Extension>

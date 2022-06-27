@@ -20,6 +20,22 @@
         End Get
     End Property
 
+    ReadOnly Property CanCook(character As Character) As Boolean
+        Get
+            Return NpcType.CanCook(character)
+        End Get
+    End Property
+
+    Public ReadOnly Property Offers As IReadOnlyDictionary(Of ItemType, Long)
+        Get
+            Return NpcType.Offers
+        End Get
+    End Property
+
+    Friend Function CanSell(character As Character) As Boolean
+        Return NpcType.CanSell(character)
+    End Function
+
     Friend Sub Deliver(character As Character, builder As StringBuilder)
         NpcType.Deliver(character, builder)
     End Sub
@@ -39,7 +55,7 @@
         Return Nothing
     End Function
 
-    Friend Shared Function Create(location As Location, npcType As NpcType) As Npc
+    Shared Function Create(location As Location, npcType As NpcType) As Npc
         Return FromId(NpcData.Create(location.Id, npcType))
     End Function
 
@@ -60,6 +76,12 @@
     Friend ReadOnly Property CanDeliver(character As Character) As Boolean
         Get
             Return NpcType.CanDeliver(character)
+        End Get
+    End Property
+
+    Public ReadOnly Property CanGamble(character As Character) As Boolean
+        Get
+            Return NpcType.CanGamble(character)
         End Get
     End Property
 End Class

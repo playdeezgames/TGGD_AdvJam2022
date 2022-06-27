@@ -6,9 +6,65 @@
         CreateFooMarT()
         CreateDarkAlley()
         CreateWilderness()
+        CreateCasino()
+        CreateFishingPond()
+        CreateFishmongery()
+        CreateHardwareStore()
         CreateNpcs()
         Return CreatePlayer()
     End Function
+
+    Private Sub CreateHardwareStore()
+        Do
+            Dim candidate = RNG.FromEnumerable(Location.FindAll(LocationType.Generic))
+            If Not candidate.Routes.ContainsKey(Direction.Inward) Then
+                Dim destination = Location.Create(LocationType.HardwareStore)
+                Route.Create(candidate, Direction.Inward, destination, RouteType.Door)
+                Route.Create(destination, Direction.Outward, candidate, RouteType.Door)
+                Exit Do
+            End If
+        Loop
+    End Sub
+
+    Private Sub CreateFishmongery()
+        Do
+            Dim candidate = RNG.FromEnumerable(Location.FindAll(LocationType.Generic))
+            If Not candidate.Routes.ContainsKey(Direction.Inward) Then
+                Dim destination = Location.Create(LocationType.Fishmongery)
+                Route.Create(candidate, Direction.Inward, destination, RouteType.Door)
+                Route.Create(destination, Direction.Outward, candidate, RouteType.Door)
+                Exit Do
+            End If
+        Loop
+    End Sub
+
+    Private Sub CreateFishingPond()
+        Dim done = False
+        While Not done
+            Dim candidate = RNG.FromEnumerable(Location.FindAll(LocationType.Wilderness))
+            Dim directions = CardinalDirections.Where(Function(x) Not candidate.HasRoute(x))
+            If directions.Any Then
+                Dim direction = RNG.FromEnumerable(directions)
+                Dim destination = Location.Create(LocationType.FishingPond)
+                Route.Create(candidate, direction, destination, RouteType.Path)
+                Route.Create(destination, direction.Opposite, candidate, RouteType.Path)
+                done = True
+            End If
+        End While
+    End Sub
+
+    Private Sub CreateCasino()
+        Dim done = False
+        While Not done
+            Dim candidate = RNG.FromEnumerable(Location.FindAll(LocationType.Generic))
+            If Not candidate.Routes.ContainsKey(Direction.Inward) Then
+                Dim destination = Location.Create(LocationType.Casino)
+                Route.Create(candidate, Direction.Inward, destination, RouteType.Door)
+                Route.Create(destination, Direction.Outward, candidate, RouteType.Door)
+                done = True
+            End If
+        End While
+    End Sub
 
     Private Sub CreateDarkAlley()
         Dim done = False

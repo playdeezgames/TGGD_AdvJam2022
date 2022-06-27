@@ -3,23 +3,23 @@
         Select Case sfx
             Case Sfx.Title
                 PlayTitle()
-            Case Sfx.BumpWall
+            Case Sfx.AteCheese
                 PlayBumpWall()
-            Case Sfx.EnemyHit
+            Case Sfx.FishingSuccess
                 PlayEnemyHit()
-            Case Sfx.EnemyMiss
+            Case Sfx.BrokenSpear
                 PlayEnemyMiss()
-            Case Sfx.HealthUp
+            Case Sfx.HungerUp
                 PlayHealthUp()
-            Case Sfx.PlayerHit
+            Case Sfx.GambleWin
                 PlayPlayerHit()
-            Case Sfx.PlayerMiss
+            Case Sfx.GambleLose
                 PlayPlayerMiss()
             Case Sfx.Death
                 PlayDeath()
             Case Sfx.RunAway
                 PlayRunAway()
-            Case Sfx.KillEnemy
+            Case Sfx.Achievement
                 PlayKillEnemy()
             Case Sfx.Win
                 PlayWin()

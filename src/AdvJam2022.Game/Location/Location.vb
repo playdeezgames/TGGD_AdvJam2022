@@ -16,6 +16,37 @@
         End Get
     End Property
 
+    ReadOnly Property CanCook(character As Character) As Boolean
+        Get
+            Return If(Npc?.CanCook(character), False)
+        End Get
+    End Property
+
+    Friend Function CanSell(character As Character) As Boolean
+        Return If(Npc?.CanSell(character), False)
+    End Function
+
+    Friend Function CanBuildFire(character As Character) As Boolean
+        If Npc IsNot Nothing Then
+            Return False
+        End If
+        Return LocationType.CanBuildFire(character)
+    End Function
+
+    Friend Function CanChopWood(character As Character) As Boolean
+        Return LocationType.CanChopWood(character)
+    End Function
+
+    Friend Function CanFish(character As Character) As Boolean
+        Return LocationType.CanFish(character)
+    End Function
+
+    ReadOnly Property CanGamble(character As Character) As Boolean
+        Get
+            Return If(Npc?.CanGamble(character), False)
+        End Get
+    End Property
+
     Friend Shared Function Create(locationType As LocationType) As Location
         Return New Location(LocationData.Create(locationType))
     End Function

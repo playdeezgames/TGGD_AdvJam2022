@@ -17,17 +17,29 @@
         End Get
     End Property
 
+    ReadOnly Property CanCook() As Boolean
+        Get
+            Return ItemType.CanCook
+        End Get
+    End Property
+
+    ReadOnly Property CanFish As Boolean
+        Get
+            Return ItemType.CanFish
+        End Get
+    End Property
+
     Friend ReadOnly Property HungerBenefit As Long
         Get
             Return ItemType.HungerBenefit
         End Get
     End Property
 
-    Friend Shared Function Create(itemType As ItemType) As Item
+    Public Shared Function Create(itemType As ItemType) As Item
         Return New Item(ItemData.Create(itemType))
     End Function
 
-    Friend Sub Destroy()
+    Public Sub Destroy()
         ItemData.Clear(Id)
     End Sub
 

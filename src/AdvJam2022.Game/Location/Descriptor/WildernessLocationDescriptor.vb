@@ -19,4 +19,12 @@
     Public Overrides Function GenerateForage() As IEnumerable(Of ItemType)
         Return New List(Of ItemType) From {RNG.FromGenerator(forageTable)}
     End Function
+
+    Public Overrides Function CanChopWood(character As Character) As Boolean
+        Return character.HasItemType(ItemType.Axe)
+    End Function
+
+    Public Overrides Function CanBuildFire(character As Character) As Boolean
+        Return character.HasItemType(ItemType.Firedrill) AndAlso character.HasItemType(ItemType.PlantFiber) AndAlso character.HasItemTypeCount(ItemType.FireWood, 5)
+    End Function
 End Class

@@ -4,6 +4,39 @@ Public Class PlayerCharacter
         MyBase.New(CharacterData.ReadForCharacterType(CharacterType.Player).Single)
     End Sub
 
+    Public Sub GetOfferList(builder As StringBuilder)
+        If Not CanSell Then
+            builder.AppendLine("There is nothing to sell.")
+            Return
+        End If
+        Dim offers = Location.Npc.Offers
+        builder.AppendLine($"{Location.Npc.Name} has the following offers:")
+        For Each offer In offers
+            builder.AppendLine($"-{offer.Key.Name}: {offer.Value} money")
+        Next
+    End Sub
+
+    Private ReadOnly StartFireGenerator As IReadOnlyDictionary(Of Boolean, Integer) = RNG.MakeBooleanGenerator(1, 1)
+
+    Public Sub StartFire(builder As StringBuilder)
+        If Not CanBuildFire Then
+            builder.AppendLine("You cannot build a fire now.")
+            Return
+        End If
+        ChangeHunger(-5)
+        Inventory.ItemStacks(ItemType.PlantFiber).First.Destroy()
+        If Not RNG.FromGenerator(StartFireGenerator) Then
+            builder.AppendLine("You fail to start the fire.")
+            Return
+        End If
+        Dim items = Inventory.ItemStacks(ItemType.FireWood).Take(5)
+        For Each item In items
+            item.Destroy()
+        Next
+        Npc.Create(Location, NpcType.Fire)
+        builder.AppendLine("You start a fire.")
+    End Sub
+
     Public Sub GetPriceList(builder As StringBuilder)
         If Not CanBuy Then
             builder.AppendLine("There is nothing to buy.")
@@ -22,6 +55,21 @@ Public Class PlayerCharacter
             Return
         End If
         Location.Npc.Deliver(Me, builder)
+    End Sub
+
+    Public Sub Sell(itemType As ItemType, builder As StringBuilder)
+        If Not CanSell OrElse Not Location.Npc.Offers.ContainsKey(itemType) Then
+            builder.AppendLine("You cannot sell that now!")
+            Return
+        End If
+        If Not HasItemType(itemType) Then
+            builder.AppendLine("You don't have any!")
+            Return
+        End If
+        Dim offer = Location.Npc.Offers(itemType)
+        builder.AppendLine($"You sell {itemType.Name} for {offer} money.")
+        ChangeStatistic(StatisticType.Money, offer)
+        Inventory.ItemStacks(itemType).First.Destroy()
     End Sub
 
     Public Sub Buy(itemType As ItemType, builder As StringBuilder)

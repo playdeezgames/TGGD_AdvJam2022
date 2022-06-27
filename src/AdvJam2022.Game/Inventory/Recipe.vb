@@ -66,6 +66,117 @@ Public Module RecipeUtility
                 {
                     {ItemType.SharpRock, 1},
                     {ItemType.ShortStick, 2}
+                }),
+            New Recipe(
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.WrappedTwinkie, 1}
+                },
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.Twinkie, 1},
+                    {ItemType.Litter, 1}
+                }),
+            New Recipe(
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.Stick, 1},
+                    {ItemType.Twine, 1},
+                    {ItemType.SharpRock, 1}
+                },
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.StoneSpear, 1}
+                }),
+            New Recipe(
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.DullAxe, 1},
+                    {ItemType.Rock, 1}
+                },
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.Axe, 1}
+                }),
+            New Recipe(
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.Twine, 1},
+                    {ItemType.Stick, 1}
+                },
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.Firebow, 1}
+                }),
+            New Recipe(
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.Firebow, 1},
+                    {ItemType.ShortStick, 1}
+                },
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.Firedrill, 1}
+                }),
+            New Recipe(
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.Twinkie, 1},
+                    {ItemType.Stick, 1}
+                },
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.TwinkieOnAStick, 1}
+                }),
+            New Recipe(
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.RawFish, 1},
+                    {ItemType.Stick, 1}
+                },
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.RawFishOnAStick, 1}
+                }),
+            New Recipe(
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.TwinkieOnAStick, 1}
+                },
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.Twinkie, 1},
+                    {ItemType.Stick, 1}
+                }),
+            New Recipe(
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.RawFishOnAStick, 1}
+                },
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.RawFish, 1},
+                    {ItemType.Stick, 1}
+                }),
+            New Recipe(
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.RoastedTwinkieOnAStick, 1}
+                },
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.RoastedTwinkie, 1},
+                    {ItemType.Stick, 1}
+                }),
+            New Recipe(
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.RoastedFishOnAStick, 1}
+                },
+                New Dictionary(Of ItemType, Long) From
+                {
+                    {ItemType.RoastedFish, 1},
+                    {ItemType.Stick, 1}
                 })
         }
 End Module

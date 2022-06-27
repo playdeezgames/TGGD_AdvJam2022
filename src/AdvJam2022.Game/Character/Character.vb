@@ -10,11 +10,52 @@
         End Get
     End Property
 
+    ReadOnly Property CanCook() As Boolean
+        Get
+            Return Location.CanCook(Me)
+        End Get
+    End Property
+
+    ReadOnly Property CanSell As Boolean
+        Get
+            Return Location.CanSell(Me)
+        End Get
+    End Property
+
+    ReadOnly Property CanBuildFire() As Boolean
+        Get
+            Return Location.CanBuildFire(Me)
+        End Get
+    End Property
+
+    ReadOnly Property CanChopWood() As Boolean
+        Get
+            Return Location.CanChopWood(Me)
+        End Get
+    End Property
+
+    ReadOnly Property CanFish As Boolean
+        Get
+            Return Location.CanFish(Me)
+        End Get
+    End Property
+
+
+    ReadOnly Property CanGamble As Boolean
+        Get
+            Return Location.CanGamble(Me)
+        End Get
+    End Property
+
     Public ReadOnly Property CanBuy() As Boolean
         Get
             Return If(Location.Npc?.CanBuyFrom(Me), False)
         End Get
     End Property
+
+    Friend Function HasItemTypeCount(itemType As ItemType, itemCount As Integer) As Boolean
+        Return Inventory.ItemCount(itemType) >= itemCount
+    End Function
 
     Function CanDoVerb(verb As Verb) As Boolean
         Return verb.CanCharacterPerform(Me)
@@ -31,7 +72,7 @@
         Return result
     End Function
 
-    Friend Sub ChangeHunger(delta As Long)
+    Public Sub ChangeHunger(delta As Long)
         Dim anticipatedHunger = GetStatistic(StatisticType.Hunger) + delta
         SetStatistic(StatisticType.Hunger, anticipatedHunger)
         Dim updatedHunger = GetStatistic(StatisticType.Hunger)
@@ -159,7 +200,7 @@
         Return CType(If(CharacterQuestData.Read(Id, questType), 0), QuestState)
     End Function
 
-    Friend Function HasItemType(itemType As ItemType) As Boolean
+    Function HasItemType(itemType As ItemType) As Boolean
         Return Inventory.ItemStacks.ContainsKey(itemType)
     End Function
 End Class

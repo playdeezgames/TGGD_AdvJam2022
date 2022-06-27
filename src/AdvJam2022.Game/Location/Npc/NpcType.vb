@@ -6,6 +6,10 @@ Public Enum NpcType
     Grocer
     DrugDealer
     Junkie
+    Gambler
+    Fishmonger
+    HardwareStoreGuy
+    Fire
 End Enum
 Public Module NpcTypeExtensions
     <Extension>
@@ -19,6 +23,10 @@ Public Module NpcTypeExtensions
     <Extension>
     Function CanAcceptQuest(npcType As NpcType, character As Character) As Boolean
         Return NpcTypeDescriptors(npcType).CanAcceptQuest(character)
+    End Function
+    <Extension>
+    Function CanSell(npcType As NpcType, character As Character) As Boolean
+        Return NpcTypeDescriptors(npcType).CanSell(character)
     End Function
     <Extension>
     Function CanDeliver(npcType As NpcType, character As Character) As Boolean
@@ -39,5 +47,17 @@ Public Module NpcTypeExtensions
     <Extension>
     Function Prices(npcType As NpcType) As IReadOnlyDictionary(Of ItemType, Long)
         Return NpcTypeDescriptors(npcType).Prices
+    End Function
+    <Extension>
+    Function Offers(npcType As NpcType) As IReadOnlyDictionary(Of ItemType, Long)
+        Return NpcTypeDescriptors(npcType).Offers
+    End Function
+    <Extension>
+    Function CanGamble(npcType As NpcType, character As Character) As Boolean
+        Return NpcTypeDescriptors(npcType).CanGamble(character)
+    End Function
+    <Extension>
+    Function CanCook(npcType As NpcType, character As Character) As Boolean
+        Return NpcTypeDescriptors(npcType).CanCook(character)
     End Function
 End Module
